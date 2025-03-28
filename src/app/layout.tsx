@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/navbar/NavBar";
-import Footer from "@/components/footer/Footer";
-import MobileNavigation from "@/components/navbar/MobileNavigation";
 import MenuProvider from "@/providers/MenuProvider";
+import Main from "@/components/main/Main";
 
 const century_gothic = localFont({
   src: [
@@ -36,10 +34,7 @@ export default function RootLayout({
       <body
         className={`${century_gothic.className} relative antialiased bg-white`}>
         <MenuProvider>
-          <Navbar />
-          <MobileNavigation />
-          {children}
-          <Footer />
+          <Main>{children}</Main>
         </MenuProvider>
       </body>
     </html>

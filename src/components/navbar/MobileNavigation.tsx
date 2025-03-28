@@ -83,7 +83,7 @@ export default function MobileNavigation() {
             </nav>
           </div>
 
-          <div className="self-stretch flex items-center gap-1.5 font-bold my-auto flex-1">
+          <div className="self-stretch flex items-center gap-1.5 font-bold my-auto">
             <Image src={"/Brazil.svg"} alt="Lucia" width={26} height={20} />
             <div className="my-auto font-bold text-xl leading-3.5 md:text-xs">
               Based in Brazil
