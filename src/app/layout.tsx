@@ -33,7 +33,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${century_gothic.className} relative antialiased`}>
+      <body
+        className={`${century_gothic.className} relative antialiased bg-white`}>
         <MenuProvider>
           <Navbar />
           <MobileNavigation />

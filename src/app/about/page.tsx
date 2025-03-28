@@ -86,7 +86,7 @@ const AboutServicesSmall: AboutServiceProps[] = [
 
 export default function About() {
   return (
-    <div className="space-y-6 mt-36">
+    <div className="space-y-6 bg-white pt-36">
       <section className="px-[25px] md:ml-[59px] space-y-[42px] md:space-y-8 mb-[90px] md:mb-[116px]">
         <div className="md:max-w-[734px] self-stretch pr-32 md:pr-24 lg:pr-0">
           <h1 className="font-bold text-[50px] md:text-[68px] leading-[52px] md:leading-[77px] tracking-[-0.7px] text-[#0F0E0E]">

@@ -20,7 +20,7 @@ export default function MobileNavigation() {
       {isOpened && (
         <div
           key="menu"
-          className="fixed inset-0 z-50 flex flex-col px-6 pt-[43px] pb-[25px] h-screen bg-[#121111] text-white">
+          className="fixed inset-0 z-50 flex flex-col px-6 pt-[43px] pb-[25px] h-dvh bg-[#121111] text-white">
           {/* Navigation Links */}
 
           <div className="flex-1">
@@ -37,14 +37,18 @@ export default function MobileNavigation() {
               </div>
 
               <div className="flex justify-end">
-                <div
-                  tabIndex={0}
-                  role="button"
-                  onClick={() => setIsOpened(!isOpened)}>
+                <button type="button" onClick={() => setIsOpened(!isOpened)}>
                   <span className="sr-only">close Menu</span>
-                  <span className="text-white">Close</span>
-                  {/* <XCircleIcon className="size-12 text-[#B9FD50]" /> */}
-                </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="36"
+                    height="36"
+                    fill="currentColor"
+                    className="bi bi-x"
+                    viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                  </svg>
+                </button>
               </div>
             </div>
 
@@ -71,6 +75,7 @@ export default function MobileNavigation() {
               <div className="">
                 <Link
                   href={"/contact"}
+                  onClick={() => setIsOpened(false)} // Close menu on click
                   className="underline text-white text-[32px] leading-[26px]">
                   Contact
                 </Link>
@@ -78,7 +83,7 @@ export default function MobileNavigation() {
             </nav>
           </div>
 
-          <div className="self-stretch flex items-center gap-1.5 font-bold my-auto">
+          <div className="self-stretch flex items-center gap-1.5 font-bold my-auto flex-1">
             <Image src={"/Brazil.svg"} alt="Lucia" width={26} height={20} />
             <div className="my-auto font-bold text-xl leading-3.5 md:text-xs">
               Based in Brazil

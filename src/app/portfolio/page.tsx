@@ -8,7 +8,7 @@ export default function Portfolio() {
   return (
     <div
       onClick={() => router.push("/portfolio/strava")}
-      className="w-screen mt-24 grid grid-cols-2 px-6 md:px-0 md:grid-cols-3 gap-y-3.5 gap-x-4 md:gap-x-8 md:gap-y-8 lg:gap-x-11 lg:gap-y-11">
+      className="bg-white w-screen pt-24 grid grid-cols-2 px-6 md:px-0 md:grid-cols-3 gap-y-3.5 gap-x-4 md:gap-x-8 md:gap-y-8 lg:gap-x-11 lg:gap-y-11">
       {Array.from({ length: 12 }).map((_, i) => (
         <div key={i} className="group h-72 w-full bg-blue-300 relative">
           <div className="absolute size-full bg-black/80 top-0 left-0 hidden z-20 group-hover:flex items-center justify-center">

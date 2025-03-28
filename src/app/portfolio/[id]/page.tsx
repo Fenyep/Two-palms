@@ -1,6 +1,6 @@
 export default function PortfolioDetails() {
   return (
-    <div className="flex mt-4 md:mt-24 flex-col md:flex-row min-h-screen w-screen">
+    <div className="flex bg-white pt-4 md:pt-24 flex-col md:flex-row min-h-screen w-screen">
       <section className="left-section w-full md:w-2/5 md:mt-32 mb-[77px] md:mb-0 pl-[25px] md:pl-10">
         <div className="max-w-[310px] mt-24">
           <div>
