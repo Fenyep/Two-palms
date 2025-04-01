@@ -11,6 +11,13 @@ const nextConfig: NextConfig = {
         pathname: "/api/v1/image/assets/**",
         search: "",
       },
+      {
+        protocol: "http",
+        hostname: "localhost", // use 'localhost' instead of '0.0.0.0'
+        port: "8055",
+        pathname: "/assets/**",
+        search: "",
+      },
     ],
   },
 };
