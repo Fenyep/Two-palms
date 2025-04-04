@@ -18,6 +18,20 @@ const nextConfig: NextConfig = {
         pathname: "/assets/**",
         search: "",
       },
+      {
+        protocol: "http",
+        hostname: "0.0.0.0", // use 'localhost' instead of '0.0.0.0'
+        port: "10000",
+        pathname: "/assets/**",
+        search: "",
+      },
+      {
+        protocol: "https",
+        hostname: "two-palms-directus.onrender.com", // use 'localhost' instead of '0.0.0.0'
+        port: "",
+        pathname: "/assets/**",
+        search: "",
+      },
     ],
   },
 };
