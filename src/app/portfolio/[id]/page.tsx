@@ -55,7 +55,7 @@ export default async function PortfolioDetails() {
         {(portfolios as unknown as Portfolio).files.map((file, i) => (
           <div key={i + 100} className="h-72 w-full">
             <Image
-              src={`http://localhost:8055/assets/${file.directus_files_id}`}
+              src={`${process.env.Directus_Url}/assets/${file.directus_files_id}`}
               alt="Image"
               width={"72"}
               height={"72"}

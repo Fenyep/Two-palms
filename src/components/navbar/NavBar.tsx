@@ -36,7 +36,7 @@ export default function Navbar() {
           </svg>
         </button>
         <div className="flex-1 hidden items-center justify-between sm:flex sm:gap-4">
-          <div className="space-x-6 md:ml-16">
+          <div className="space-x-6 md:ml-16 text-black">
             <Link className="hover:underline hover:underline-offset-2" href="/">
               Home
             </Link>

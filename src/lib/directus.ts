@@ -1,6 +1,6 @@
 import { createDirectus, rest } from "@directus/sdk";
 
-const directusInstance = createDirectus("http://0.0.0.0:8055").with(
+const directusInstance = createDirectus(`${process.env.Directus_Url}`).with(
   rest({
     onRequest: (options) => ({ ...options, cache: "no-store" }),
   })
