@@ -3,11 +3,19 @@
 import Link from "next/link";
 import LogoSvg from "../LogoSvg";
 import Image from "next/image";
+import Reveal from "../animations/Reveal";
+import { useMenuContext } from "@/hooks/guards/useMenuContext";
+import { motion } from "framer-motion";
+import {
+  firstTextVariant,
+  secondTextVariant,
+} from "@/constants/animation.constants";
 
 export default function Footer() {
+  const { navlinks } = useMenuContext();
   return (
     <footer className="bg-black flex flex-col overflow-hidden items-stretch pt-[72px] md:pt-[55px] pb-[22px]">
-      <div className="max-w-full ml-[19px] md:ml-[59px]">
+      <Reveal className="max-w-full ml-[19px] md:ml-[59px]">
         <div className="flex flex-col md:gap-y-0 md:flex-row">
           <div className="text-2xl md:w-[64%] lg:w-[50%] text-white uppercase tracking-[-0.8px] mt-2.5 max-md:max-w-full max-md:mt-10">
             <div className="font-normal md:font-bold leading-none">
@@ -19,8 +27,32 @@ export default function Footer() {
           </div>
 
           <div className="text-white md:gap-x-8 lg:gap-x-[66px] mt-[130px] md:mt-0 space-y-[13px] md:space-y-0 md:inline-flex text-[22px] font-normal leading-5">
-            <div className="flex flex-col gap-y-[13px]">
-              <Link
+            <ul className="flex flex-col gap-y-[13px]">
+              {navlinks.map((elmt, index) => (
+                <motion.li
+                  key={elmt.label + index}
+                  initial="initial"
+                  whileHover={"hover"}
+                  animate="animate"
+                  className="relative z-10 whitespace-nowrap cursor-pointer uppercase mix-blend-difference">
+                  <div className="overflow-hidden relative  text-white">
+                    <motion.a
+                      variants={firstTextVariant}
+                      href={elmt.href}
+                      className="z-20 block">
+                      {elmt.label}
+                    </motion.a>
+                    <motion.a
+                      variants={secondTextVariant}
+                      aria-hidden
+                      href={elmt.href}
+                      className="absolute top-0 left-0 z-20">
+                      {elmt.label}
+                    </motion.a>
+                  </div>
+                </motion.li>
+              ))}
+              {/* <Link
                 href="#"
                 className="hover:underline hover:underline-offset-2">
                 Home
@@ -39,8 +71,8 @@ export default function Footer() {
                 href="#"
                 className="hover:underline hover:underline-offset-2">
                 About
-              </Link>
-            </div>
+              </Link> */}
+            </ul>
             <div className="flex flex-col gap-y-[13px]">
               <Link
                 href="#"
@@ -55,9 +87,9 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </Reveal>
 
-      <div className="w-full flex justify-center md:justify-start max-md:px-5 p-[50px] py-5 border-[rgba(31,31,31,1)] border-t border-b mt-[117px]">
+      <Reveal className="w-full flex justify-center md:justify-start max-md:px-5 p-[50px] py-5 border-[rgba(31,31,31,1)] border-t border-b mt-[117px]">
         <div className="w-fit gap-[40px_19px] flex items-center text-[91px] text-white font-normal max-md:text-[40px] ">
           <div className="w-[62px] h-[67]">
             <LogoSvg fillColor="white" width="62" height="67" />
@@ -68,7 +100,7 @@ export default function Footer() {
             </p>
           </div>
         </div>
-      </div>
+      </Reveal>
       <div className="flex w-full max-w-full items-center px-14 text-white leading-[1.2] justify-center md:justify-between flex-wrap mt-[31px] max-md:max-w-full">
         <div className="self-stretch hidden md:flex text-xs items-center min-w-60 gap-1.5 font-normal my-auto ">
           <LogoSvg fillColor="white" width="22" height="24" />

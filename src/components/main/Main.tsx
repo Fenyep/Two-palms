@@ -4,7 +4,6 @@ import Navbar from "@/components/navbar/NavBar";
 import Footer from "@/components/footer/Footer";
 import MobileNavigation from "@/components/navbar/MobileNavigation";
 import { useMenuContext } from "@/hooks/guards/useMenuContext";
-import Reveal from "../animations/Reveal";
 
 export default function Main({
   children,
@@ -17,10 +16,7 @@ export default function Main({
       <MobileNavigation />
       <Navbar />
       {children}
-
-      <Reveal>
-        <Footer />
-      </Reveal>
+      <Footer />
     </div>
   );
 }
