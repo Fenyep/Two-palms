@@ -34,19 +34,19 @@ export default function Footer() {
                   initial="initial"
                   whileHover={"hover"}
                   animate="animate"
-                  className="relative z-10 whitespace-nowrap cursor-pointer uppercase mix-blend-difference">
-                  <div className="overflow-hidden relative  text-white">
+                  className="relative z-10 whitespace-nowrap cursor-pointer uppercase mix-blend-difference p-1">
+                  <div className="overflow-hidden relative text-white">
                     <motion.a
                       variants={firstTextVariant}
                       href={elmt.href}
-                      className="z-20 block">
+                      className="z-20 block pb-0.5">
                       {elmt.label}
                     </motion.a>
                     <motion.a
                       variants={secondTextVariant}
                       aria-hidden
                       href={elmt.href}
-                      className="absolute top-0 left-0 z-20">
+                      className="absolute top-0 left-0 z-20 underline underline-offset-2">
                       {elmt.label}
                     </motion.a>
                   </div>

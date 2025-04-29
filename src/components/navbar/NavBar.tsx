@@ -49,18 +49,18 @@ export default function Navbar() {
                 whileHover={"hover"}
                 animate="animate"
                 className="relative z-10 whitespace-nowrap cursor-pointer uppercase mix-blend-difference">
-                <div className="overflow-hidden relative hover:underline hover:underline-offset-2 text-[#111204]">
+                <div className="overflow-hidden relative  text-[#111204]">
                   <motion.a
                     variants={firstTextVariant}
                     href={elmt.href}
-                    className="z-20 block">
+                    className="z-20 block underline-none">
                     {elmt.label}
                   </motion.a>
                   <motion.a
                     variants={secondTextVariant}
                     aria-hidden
                     href={elmt.href}
-                    className="absolute top-0 left-0 z-20">
+                    className="absolute top-0 left-0 z-20 underline underline-offset-2">
                     {elmt.label}
                   </motion.a>
                 </div>
