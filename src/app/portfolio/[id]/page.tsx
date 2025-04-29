@@ -18,11 +18,13 @@ async function getPortfolio() {
     })
   );
 
+  console.log(response);
+
   return response as Portfolio[];
 }
 
 export default async function PortfolioDetails() {
-  const portfolios = await getPortfolio();
+  const portfolios = await getPortfolio().catch((err) => console.error(err));
 
   console.log(portfolios);
 

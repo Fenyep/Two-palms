@@ -84,3 +84,36 @@ export default function Footer() {
     </footer>
   );
 }
+
+// const FooterNav = () => {
+//   const { navlinks } = useMenuContext();
+
+//   return (
+//     <ul className="flex flex-wrap items-center gap-8">
+//       {navlinks.map((elmt, index) => (
+//         <motion.li
+//           key={index + elmt.label}
+//           className="relative overflow-hidden"
+//           initial="initial"
+//           animate="animate"
+//           whileHover="hover"
+//         >
+//           {/* First Text */}
+//           <motion.a variants={firstTextVariant} href={elmt.href} className="block">
+//             {elmt.label}
+//           </motion.a>
+
+//           {/* Second Text */}
+//           <motion.a
+//             variants={secondTextVariant}
+//             aria-hidden
+//             href={elmt.href}
+//             className="absolute top-0 left-0 text-[#B9FD50]"
+//           >
+//             {elmt.label}
+//           </motion.a>
+//         </motion.li>
+//       ))}
+//     </ul>
+//   );
+// };

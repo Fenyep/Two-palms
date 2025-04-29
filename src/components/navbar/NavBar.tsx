@@ -2,9 +2,14 @@
 import Link from "next/link";
 import LogoSvg from "../LogoSvg";
 import { useMenuContext } from "@/hooks/guards/useMenuContext";
+import {
+  firstTextVariant,
+  secondTextVariant,
+} from "@/constants/animation.constants";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
-  const { setIsOpened } = useMenuContext();
+  const { setIsOpened, navlinks } = useMenuContext();
   return (
     <div className="flex w-full px-7 mt-4 py-2 fixed top-0 z-30 backdrop-blur-sm">
       <div className="w-1/2 sm:w-1/3 lg:w-1/2">
@@ -35,9 +40,34 @@ export default function Navbar() {
             />
           </svg>
         </button>
-        <div className="flex-1 hidden items-center justify-between sm:flex sm:gap-4">
-          <div className="space-x-6 md:ml-16 text-black">
-            <Link className="hover:underline hover:underline-offset-2" href="/">
+        <nav className="flex-1 hidden items-center justify-between sm:flex sm:gap-4">
+          <ul className="space-x-6 md:ml-16 text-black flex">
+            {navlinks.map((elmt, index) => (
+              <motion.li
+                key={elmt.label + index}
+                initial="initial"
+                whileHover={"hover"}
+                animate="animate"
+                className="relative z-10 whitespace-nowrap cursor-pointer uppercase mix-blend-difference">
+                <div className="overflow-hidden relative hover:underline hover:underline-offset-2 text-[#111204]">
+                  <motion.a
+                    variants={firstTextVariant}
+                    href={elmt.href}
+                    className="z-20 block">
+                    {elmt.label}
+                  </motion.a>
+                  <motion.a
+                    variants={secondTextVariant}
+                    aria-hidden
+                    href={elmt.href}
+                    className="absolute top-0 left-0 z-20">
+                    {elmt.label}
+                  </motion.a>
+                </div>
+              </motion.li>
+            ))}
+
+            {/* <Link className="hover:underline hover:underline-offset-2" href="/">
               Home
             </Link>
             <Link
@@ -54,15 +84,37 @@ export default function Navbar() {
               className="hover:underline hover:underline-offset-2"
               href="/about">
               About
-            </Link>
-          </div>
+            </Link> */}
+          </ul>
           <Link
             href="/contact"
             className="font-bold text-black leading-4 hover:underline hover:underline-offset-2">
             Contact
           </Link>
-        </div>
+        </nav>
       </div>
     </div>
   );
+}
+
+//   variants={backgroundVariant}
+// onMouseEnter={() => handleHoverButton(index)}
+// onMouseLeave={() => {
+//   handleHoverButton(null);
+// }}
+
+{
+  /* <AnimatePresence>
+      {elementFocused === index && (
+        <motion.div
+          animate={{ opacity: 1, scale: 1 }}
+          className="-z-10 absolute top-0 right-0 bottom-0 left-0 rounded-full bg-[#B9FD50] dark:bg-neutral-800"
+          exit={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          layout={true}
+          layoutId="focused-element"
+          transition={{ duration: 0.2 }}
+        />
+      )}
+    </AnimatePresence> */
 }
