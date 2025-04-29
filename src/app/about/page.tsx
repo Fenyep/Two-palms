@@ -1,3 +1,4 @@
+import Reveal from "@/components/animations/Reveal";
 import LogoSvg from "@/components/LogoSvg";
 import Image from "next/image";
 
@@ -87,7 +88,7 @@ const AboutServicesSmall: AboutServiceProps[] = [
 export default function About() {
   return (
     <div className="space-y-6 bg-white pt-36">
-      <section className="px-[25px] md:ml-[59px] space-y-[42px] md:space-y-8 mb-[90px] md:mb-[116px]">
+      <Reveal className="px-[25px] md:ml-[59px] space-y-[42px] md:space-y-8 mb-[90px] md:mb-[116px]">
         <div className="md:max-w-[734px] self-stretch pr-32 md:pr-24 lg:pr-0">
           <h1 className="font-bold text-[50px] md:text-[68px] leading-[52px] md:leading-[77px] tracking-[-0.7px] text-[#0F0E0E]">
             We are a BRAZILIAN Full-Service Production Company
@@ -101,22 +102,22 @@ export default function About() {
             Begin project
           </span>
         </button>
-      </section>
-      <section className="flex gap-6 mb-[101px]">
+      </Reveal>
+      <Reveal className="flex gap-6 mb-[101px]">
         {Array.from({ length: 4 }).map((_, i) => (
           <div key={i} className="h-[702px] w-full bg-blue-300"></div>
         ))}
-      </section>
+      </Reveal>
 
-      <section className="flex flex-col-reverse md:flex-col">
+      <Reveal className="flex flex-col-reverse md:flex-col">
         <div className="flex flex-col lg:flex-row justify-between w-full mx-auto px-[25px] max-w-[1440px] gap-[48px] mb-[88px] md:mb-[193px]">
-          <section className="left-section max-w-[246px]">
+          <Reveal className="left-section max-w-[246px]">
             <h2 className="font-semibold text-black text-xl md:text-[25px] leading-7 md:leading-9">
               Bringing brands to life through Brazil
             </h2>
-          </section>
+          </Reveal>
 
-          <section className="right-section md:hidden space-y-[42px] text-[28px] leading-9 tracking-[-0.341px]">
+          <Reveal className="right-section md:hidden space-y-[42px] text-[28px] leading-9 tracking-[-0.341px]">
             <p>
               We’re a passionate team of creatives who bring bold ideas to life.
             </p>
@@ -124,8 +125,8 @@ export default function About() {
               We celebrate the spirit of Brazil while transforming ideas into
               campaigns.
             </p>
-          </section>
-          <section className="right-section max-w-[783px] hidden md:block space-y-6 text-[30px] leading-10 tracking-[-0.12px]">
+          </Reveal>
+          <Reveal className="right-section max-w-[783px] hidden md:block space-y-6 text-[30px] leading-10 tracking-[-0.12px]">
             <p>
               Two Palms is a full-service still & commercial production company
               specialising in advertising, lifestyle and fashion shoots.
@@ -140,18 +141,18 @@ export default function About() {
               producers, directors, photographers, glam team and creatives,
               we’re here for the biggest projects or the smallest tasks.
             </p>
-          </section>
+          </Reveal>
         </div>
-        <section className="flex gap-6 mb-[67px] md:mb-[193px]">
+        <Reveal className="flex gap-6 mb-[67px] md:mb-[193px]">
           {Array.from({ length: 4 }).map((_, i) => (
             <div
               key={i}
               className="h-[581px] md:h-[702px] w-full bg-blue-300"></div>
           ))}
-        </section>
+        </Reveal>
 
-        <div className="flex flex-col md:flex-row justify-between w-full mb-[285.64px] md:mb-[193px] mx-auto max-w-[1440px] gap-[55px] md:gap-4 px-[25px] md:px-0">
-          <section className="left-section max-w-[246px] space-y-[18px]">
+        <Reveal className="flex flex-col md:flex-row justify-between w-full mb-[285.64px] md:mb-[193px] mx-auto max-w-[1440px] gap-[55px] md:gap-4 px-[25px] md:px-0">
+          <Reveal className="left-section max-w-[246px] space-y-[18px]">
             <h2 className="font-semibold text-black text-[25px] leading-9">
               / About Lucia
             </h2>
@@ -162,8 +163,8 @@ export default function About() {
               width={218.5}
               height={146}
             />
-          </section>
-          <section className="right-section md:max-w-[783px] space-y-12 text-[22px] md:text-[30px] leading-[35px] md:leading-[41px] tracking-[-0.12px]">
+          </Reveal>
+          <Reveal className="right-section md:max-w-[783px] space-y-12 text-[22px] md:text-[30px] leading-[35px] md:leading-[41px] tracking-[-0.12px]">
             <p>
               Born in Brazil with German roots, Lucia founded Two Palms in 2007
               with a bold vision: to bring world-class advertising production to
@@ -175,20 +176,20 @@ export default function About() {
               energy, delivering production experience that’s as smooth as it is
               creative.
             </p>
-          </section>
-        </div>
-      </section>
+          </Reveal>
+        </Reveal>
+      </Reveal>
 
-      <div className="bg-[#F6F6F6] pt-[56px] md:pt-[82px] pb-[54px] md:pb-24 pl-[25px] md:pl-[59px] pr-[27px] md:pr-[278px] flex flex-col md:flex-row md:justify-between gap-[62px] md:gap-8">
-        <section className="left-section">
+      <Reveal className="bg-[#F6F6F6] pt-[56px] md:pt-[82px] pb-[54px] md:pb-24 pl-[25px] md:pl-[59px] pr-[27px] md:pr-[278px] flex flex-col md:flex-row md:justify-between gap-[62px] md:gap-8">
+        <Reveal className="left-section">
           <h2 className="font-semibold hidden md:block text-black text-[25px] leading-9">
             Full Service list
           </h2>
           <h2 className="font-semibold md:hidden text-black text-[25px] leading-9">
             What We Do
           </h2>
-        </section>
-        <section className="right-section max-w-[635px]">
+        </Reveal>
+        <Reveal className="right-section max-w-[635px]">
           <div className="space-y-12 md:hidden">
             {AboutServicesSmall.map((service, index) => (
               <AboutService key={`service-${index}`} {...service} />
@@ -199,13 +200,13 @@ export default function About() {
               <AboutService key={`service-${index}`} {...service} />
             ))}
           </div>
-        </section>
-      </div>
+        </Reveal>
+      </Reveal>
 
-      <section className="w-full pt-[68px] pb-[81px] md:pt-[102px] md:pb-[107px] px-[26px] md:pl-[59px] md:pr-[348px] flex md:justify-between md:gap-8 bg-[#001A92]">
+      <Reveal className="w-full pt-[68px] pb-[81px] md:pt-[102px] md:pb-[107px] px-[26px] md:pl-[59px] md:pr-[348px] flex md:justify-between md:gap-8 bg-[#001A92]">
         <div className="left-section hidden size-4 md:block" />
 
-        <div className="max-w-[556px] space-y-[44px]">
+        <Reveal className="max-w-[556px] space-y-[44px]">
           <p className="text-white text-[26px] leading-[39px] md:text-[34px] font-bold md:leading-[48.333px] tracking-[-0.141px]">
             “Always ensure a smooth, on-time, and budget-friendly production
             experience”
@@ -219,8 +220,8 @@ export default function About() {
               <p>Strava</p>
             </div>
           </div>
-        </div>
-      </section>
+        </Reveal>
+      </Reveal>
     </div>
   );
 }

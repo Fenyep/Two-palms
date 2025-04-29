@@ -1,3 +1,5 @@
+"use client";
+
 import { Variants, motion, useAnimation, useInView } from "framer-motion";
 import * as React from "react";
 
@@ -9,14 +11,18 @@ export interface RevealProps extends React.ComponentPropsWithoutRef<"div"> {
 }
 
 const Reveal = React.forwardRef<HTMLDivElement, RevealProps>(
-  ({
-    children,
-    className,
-    variant = "to-top",
-    once = true,
-    duration = 0.5,
-    delay = 0.25,
-  }) => {
+  (
+    {
+      children,
+      className,
+      variant = "to-top",
+      once = true,
+      duration = 0.5,
+      delay = 0.25,
+    },
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    _
+  ) => {
     const compRef = React.useRef<HTMLDivElement | null>(null);
 
     const isInView = useInView(compRef, { once: once });
