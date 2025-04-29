@@ -1,32 +1,32 @@
-import directusInstance from "@/lib/directus";
-import { readItems } from "@directus/sdk";
-import Image from "next/image";
+// import directusInstance from "@/lib/directus";
+// import { readItems } from "@directus/sdk";
+// import Image from "next/image";
 
-type Portfolio = {
-  id: string;
-  files: {
-    id: number;
-    portfolio_id: string;
-    directus_files_id: string;
-  }[];
-};
+// type Portfolio = {
+//   id: string;
+//   files: {
+//     id: number;
+//     portfolio_id: string;
+//     directus_files_id: string;
+//   }[];
+// };
 
-async function getPortfolio() {
-  const response = await directusInstance.request(
-    readItems("portfolio", {
-      fields: ["id", "files.*"],
-    })
-  );
+// async function getPortfolio() {
+//   const response = await directusInstance.request(
+//     readItems("portfolio", {
+//       fields: ["id", "files.*"],
+//     })
+//   );
 
-  console.log(response);
+//   console.log(response);
 
-  return response as Portfolio[];
-}
+//   return response as Portfolio[];
+// }
 
 export default async function PortfolioDetails() {
-  const portfolios = await getPortfolio().catch((err) => console.error(err));
+  // const portfolios = await getPortfolio().catch((err) => console.error(err));
 
-  console.log(portfolios);
+  // console.log(portfolios);
 
   return (
     <div className="flex bg-white pt-4 md:pt-24 flex-col md:flex-row min-h-screen w-screen">
@@ -54,7 +54,7 @@ export default async function PortfolioDetails() {
         </div>
       </section>
       <section className="right-section w-full md:w-3/5 h-auto grid grid-cols-1 px-6 md:px-0 gap-4 md:gap-x-8 gap-y-6">
-        {(portfolios as unknown as Portfolio).files.map((file, i) => (
+        {/* {(portfolios as unknown as Portfolio).files.map((file, i) => (
           <div key={i + 100} className="h-72 w-full">
             <Image
               src={`${process.env.Directus_Url}/assets/${file.directus_files_id}`}
@@ -64,7 +64,7 @@ export default async function PortfolioDetails() {
               loading="lazy"
             />
           </div>
-        ))}
+        ))} */}
         {Array.from({ length: 6 }).map((_, i) => (
           <div key={i} className="h-72 w-full bg-blue-300"></div>
         ))}
