@@ -88,7 +88,7 @@ const AboutServicesSmall: AboutServiceProps[] = [
 
 export default function About() {
   return (
-    <div className="space-y-6 bg-white pt-36">
+    <div className="space-y-6 bg-white pt-36 text-black">
       <Reveal className="px-[25px] md:ml-[59px] space-y-[42px] md:space-y-8 mb-[90px] md:mb-[116px]">
         <div className="md:max-w-[734px] self-stretch pr-32 md:pr-24 lg:pr-0">
           <h1 className="font-bold text-[50px] md:text-[68px] leading-[52px] md:leading-[77px] tracking-[-0.7px] text-[#0F0E0E]">
@@ -104,13 +104,10 @@ export default function About() {
           </span>
         </button>
       </Reveal>
-      <InfiniteCarousel />
-      <Reveal className="flex gap-6 mb-[101px]">
-        {Array.from({ length: 4 }).map((_, i) => (
-          <div key={i} className="h-[702px] w-full bg-blue-300"></div>
-        ))}
-      </Reveal>
-      <Reveal className="flex flex-col-reverse md:flex-col">
+      <div className="mb-[101px] max-w-screen overflow-x-hidden">
+        <InfiniteCarousel />
+      </div>
+      <div className="flex flex-col-reverse md:flex-col">
         <div className="flex flex-col lg:flex-row justify-between w-full mx-auto px-[25px] max-w-[1440px] gap-[48px] mb-[88px] md:mb-[193px]">
           <Reveal className="left-section max-w-[246px]">
             <h2 className="font-semibold text-black text-xl md:text-[25px] leading-7 md:leading-9">
@@ -127,7 +124,7 @@ export default function About() {
               campaigns.
             </p>
           </Reveal>
-          <Reveal className="right-section max-w-[783px] hidden md:block space-y-6 text-[30px] leading-10 tracking-[-0.12px]">
+          <Reveal className="right-section max-w-[783px] hidden md:block space-y-6 text-[30px] leading-10 tracking-[-0.12px] text-black">
             <p>
               Two Palms is a full-service still & commercial production company
               specialising in advertising, lifestyle and fashion shoots.
@@ -144,13 +141,14 @@ export default function About() {
             </p>
           </Reveal>
         </div>
-        <Reveal className="flex gap-6 mb-[67px] md:mb-[193px]">
-          {Array.from({ length: 4 }).map((_, i) => (
+        <div className="flex gap-6 mb-[67px] md:mb-[193px] max-w-screen overflow-x-hidden">
+          <InfiniteCarousel />
+          {/* {Array.from({ length: 4 }).map((_, i) => (
             <div
               key={i}
               className="h-[581px] md:h-[702px] w-full bg-blue-300"></div>
-          ))}
-        </Reveal>
+          ))} */}
+        </div>
 
         <Reveal className="flex flex-col md:flex-row justify-between w-full mb-[285.64px] md:mb-[193px] mx-auto max-w-[1440px] gap-[55px] md:gap-4 px-[25px] md:px-0">
           <Reveal className="left-section max-w-[246px] space-y-[18px]">
@@ -165,7 +163,7 @@ export default function About() {
               height={146}
             />
           </Reveal>
-          <Reveal className="right-section md:max-w-[783px] space-y-12 text-[22px] md:text-[30px] leading-[35px] md:leading-[41px] tracking-[-0.12px]">
+          <Reveal className="text-black right-section md:max-w-[783px] space-y-12 text-[22px] md:text-[30px] leading-[35px] md:leading-[41px] tracking-[-0.12px]">
             <p>
               Born in Brazil with German roots, Lucia founded Two Palms in 2007
               with a bold vision: to bring world-class advertising production to
@@ -179,7 +177,7 @@ export default function About() {
             </p>
           </Reveal>
         </Reveal>
-      </Reveal>
+      </div>
       <Reveal className="bg-[#F6F6F6] pt-[56px] md:pt-[82px] pb-[54px] md:pb-24 pl-[25px] md:pl-[59px] pr-[27px] md:pr-[278px] flex flex-col md:flex-row md:justify-between gap-[62px] md:gap-8">
         <Reveal className="left-section">
           <h2 className="font-semibold hidden md:block text-black text-[25px] leading-9">
@@ -189,7 +187,7 @@ export default function About() {
             What We Do
           </h2>
         </Reveal>
-        <Reveal className="right-section max-w-[635px]">
+        <Reveal className="right-section max-w-[635px] text-black">
           <div className="space-y-12 md:hidden">
             {AboutServicesSmall.map((service, index) => (
               <AboutService key={`service-${index}`} {...service} />

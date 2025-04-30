@@ -31,7 +31,7 @@ export default function InfiniteCarousel() {
 
   useEffect(() => {
     let controls;
-    const finalPosition = -width / 2 - 8;
+    const finalPosition = -width / 2 - 16;
 
     if (mustFinish) {
       controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
