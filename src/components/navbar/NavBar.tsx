@@ -41,7 +41,7 @@ export default function Navbar() {
           </svg>
         </button>
         <nav className="flex-1 hidden items-center justify-between sm:flex sm:gap-4">
-          <ul className="space-x-6 md:ml-16 text-black flex">
+          <ul className="space-x-3 md:space-x-6 md:ml-16 text-black flex">
             {navlinks.map((elmt, index) => (
               <motion.li
                 key={elmt.label + index}
@@ -49,7 +49,7 @@ export default function Navbar() {
                 whileHover={"hover"}
                 animate="animate"
                 className="relative z-10 whitespace-nowrap cursor-pointer uppercase mix-blend-difference">
-                <div className="overflow-hidden relative  text-[#111204]">
+                <div className="overflow-hidden relative text-[#111204]">
                   <motion.a
                     variants={firstTextVariant}
                     href={elmt.href}

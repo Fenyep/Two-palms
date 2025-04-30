@@ -13,7 +13,7 @@ export default function HomeHero() {
         </p>
       </div>
 
-      <div className="w-[352px] md:w-[461px] mx-auto text-center mb-[42px] md:mb-[34px]">
+      <div className="w-[352px] sm:w-[400px] sm:!pt-8 md:!pt-0 md:w-[461px] mx-auto text-center mb-[42px] md:mb-[34px] md:px-10 lg:px-0">
         <p className="text-xl md:text-lg text-[#2D2D2D] leading-6 tracking-[-0.145px] md:tracking-[-0.18px] break-words">
           Specialising in advertising, lifestyle, and fashion shoots, with
           offices in Rio and São Paulo, delivering top-tier productions across
@@ -22,9 +22,9 @@ export default function HomeHero() {
       </div>
 
       <div className="w-full">
-        {/* <button
+        <button
           onClick={() => router.push("/portfolio")}
-          className="flex mx-auto justify-center cursor-pointer items-center gap-3.5 text-white py-[12.367px] px-[18.55px] bg-black"
+          className="flex sm:hidden mx-auto justify-center cursor-pointer items-center gap-3.5 text-white py-[12.367px] px-[18.55px] bg-black"
           type="button">
           <span className="text-[18px] font-normal tracking-[-0.346px] uppercase">
             Our Portfolio
@@ -40,7 +40,7 @@ export default function HomeHero() {
               fill="white"
             />
           </svg>
-        </button> */}
+        </button>
 
         <MotionIconButton
           icon={
@@ -57,7 +57,7 @@ export default function HomeHero() {
             </svg>
           }
           onClick={() => router.push("/portfolio")}
-          className="flex mx-auto justify-center cursor-pointer items-center gap-3.5 text-white py-[12.367px] w-52 bg-black relative overflow-hidden"
+          className="hidden sm:flex mx-auto justify-center cursor-pointer items-center gap-3.5 text-white py-[12.367px] w-52 bg-black relative overflow-hidden"
           type="button">
           <span className="text-[18px] font-normal tracking-[-0.346px] uppercase w-full">
             Our Portfolio
