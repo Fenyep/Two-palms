@@ -1,4 +1,5 @@
 import Reveal from "@/components/animations/Reveal";
+import InfiniteCarousel from "@/components/carousel/InfiniteCarousel";
 import LogoSvg from "@/components/LogoSvg";
 import Image from "next/image";
 
@@ -103,12 +104,12 @@ export default function About() {
           </span>
         </button>
       </Reveal>
+      <InfiniteCarousel />
       <Reveal className="flex gap-6 mb-[101px]">
         {Array.from({ length: 4 }).map((_, i) => (
           <div key={i} className="h-[702px] w-full bg-blue-300"></div>
         ))}
       </Reveal>
-
       <Reveal className="flex flex-col-reverse md:flex-col">
         <div className="flex flex-col lg:flex-row justify-between w-full mx-auto px-[25px] max-w-[1440px] gap-[48px] mb-[88px] md:mb-[193px]">
           <Reveal className="left-section max-w-[246px]">
@@ -179,7 +180,6 @@ export default function About() {
           </Reveal>
         </Reveal>
       </Reveal>
-
       <Reveal className="bg-[#F6F6F6] pt-[56px] md:pt-[82px] pb-[54px] md:pb-24 pl-[25px] md:pl-[59px] pr-[27px] md:pr-[278px] flex flex-col md:flex-row md:justify-between gap-[62px] md:gap-8">
         <Reveal className="left-section">
           <h2 className="font-semibold hidden md:block text-black text-[25px] leading-9">
@@ -202,7 +202,6 @@ export default function About() {
           </div>
         </Reveal>
       </Reveal>
-
       <Reveal className="w-full pt-[68px] pb-[81px] md:pt-[102px] md:pb-[107px] px-[26px] md:pl-[59px] md:pr-[348px] flex md:justify-between md:gap-8 bg-[#001A92]">
         <div className="left-section hidden size-4 md:block" />
 
