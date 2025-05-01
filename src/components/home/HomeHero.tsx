@@ -6,7 +6,7 @@ import MotionIconButton from "../buttons/animated/MotionIconButton";
 export default function HomeHero() {
   const router = useRouter();
   return (
-    <div className="space-y-6 md:space-y-8 py-14">
+    <div className="space-y-6 md:space-y-8 py-8 sm:py-14">
       <div className="flex w-[352px] mx-auto text-center md:w-[461px] h-[250px] md:h-[321px] flex-col justify-center self-stretch">
         <p className="font-bold text-[45px] sm:text-[55px] uppercase leading-[50px] px-4 md:px-8 md:leading-16 text-[#0F0E0E]">
           We are a BRAZILIAN Full-Service Production Company

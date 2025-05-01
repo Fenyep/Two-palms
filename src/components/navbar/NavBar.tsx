@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 export default function Navbar() {
   const { setIsOpened, navlinks } = useMenuContext();
   return (
-    <div className="flex w-full px-7 mt-4 py-2 fixed top-0 z-30 backdrop-blur-sm">
+    <div className="flex w-full px-7 py-4 fixed top-0 z-30 bg-white">
       <div className="w-1/2 sm:w-1/3 lg:w-1/2">
         <Link href="/" className="flex items-center gap-2.5 w-fit">
           <div className="w-[38px] h-[41px]">
@@ -40,57 +40,68 @@ export default function Navbar() {
             />
           </svg>
         </button>
-        <nav className="flex-1 hidden items-center justify-between sm:flex sm:gap-4">
+        <nav className="flex-1 hidden items-center justify-between sm:flex sm:gap-4 z-30">
           <ul className="space-x-3 md:space-x-6 md:ml-16 text-black flex">
             {navlinks.map((elmt, index) => (
-              <motion.li
+              <div
                 key={elmt.label + index}
-                initial="initial"
-                whileHover={"hover"}
-                animate="animate"
-                className="relative z-10 whitespace-nowrap cursor-pointer uppercase mix-blend-difference">
-                <div className="overflow-hidden relative text-[#111204]">
-                  <motion.a
-                    variants={firstTextVariant}
-                    href={elmt.href}
-                    className="z-20 block underline-none">
-                    {elmt.label}
-                  </motion.a>
-                  <motion.a
-                    variants={secondTextVariant}
-                    aria-hidden
-                    href={elmt.href}
-                    className="absolute top-0 left-0 z-20 underline underline-offset-2">
-                    {elmt.label}
-                  </motion.a>
-                </div>
-              </motion.li>
-            ))}
+                className="group relative inline-block text-[#111204]">
+                <motion.li
+                  initial="initial"
+                  whileHover={"hover"}
+                  animate="animate"
+                  className="relative z-10 whitespace-nowrap cursor-pointer uppercase mix-blend-difference">
+                  <div className="overflow-hidden relative">
+                    <motion.a
+                      variants={firstTextVariant}
+                      href={elmt.href}
+                      className="z-20 block">
+                      {elmt.label}
+                    </motion.a>
+                    <motion.a
+                      variants={secondTextVariant}
+                      aria-hidden
+                      href={elmt.href}
+                      className="absolute top-0 left-0 z-20">
+                      {elmt.label}
+                    </motion.a>
+                  </div>
+                </motion.li>
 
-            {/* <Link className="hover:underline hover:underline-offset-2" href="/">
-              Home
-            </Link>
-            <Link
-              className="hover:underline hover:underline-offset-2"
-              href="/portfolio">
-              Portfolio
-            </Link>
-            <Link
-              className="hover:underline hover:underline-offset-2"
-              href="/location">
-              Location
-            </Link>
-            <Link
-              className="hover:underline hover:underline-offset-2"
-              href="/about">
-              About
-            </Link> */}
+                {/* Static underline holder */}
+                <div className="absolute -bottom-0.5 left-0 w-full h-[1px] bg-black group-hover:block hidden" />
+              </div>
+            ))}
           </ul>
-          <Link
+          <div className="group relative inline-block text-[#111204] font-bold">
+            <motion.div
+              initial="initial"
+              whileHover={"hover"}
+              animate="animate"
+              className="overflow-hidden relative text-[#111204] font-bold">
+              <motion.a
+                variants={firstTextVariant}
+                href={"/contact"}
+                className="z-20 block">
+                Contact
+              </motion.a>
+              <motion.a
+                variants={secondTextVariant}
+                aria-hidden
+                href={"/contact"}
+                className="absolute top-0 left-0 z-20">
+                Contact
+              </motion.a>
+            </motion.div>
+
+            {/* Static underline holder */}
+            <div className="absolute -bottom-0.5 left-0 w-full h-[1px] bg-black group-hover:block hidden" />
+          </div>
+          {/* <Link
             href="/contact"
             className="font-bold text-black leading-4 hover:underline hover:underline-offset-2">
             Contact
-          </Link>
+          </Link> */}
         </nav>
       </div>
     </div>
