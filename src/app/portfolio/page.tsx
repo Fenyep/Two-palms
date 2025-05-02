@@ -1,15 +1,59 @@
 "use client";
 
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import ImageCard from "@/components/card/ImageCard";
+import InfiniteVerticalCarousel from "@/components/carousel/InfiniteVerticalCarousel";
+import { images1, images2, images3 } from "@/lib/data";
+// import Link from "next/link";
+// import { useRouter } from "next/navigation";
 
 export default function Portfolio() {
-  const router = useRouter();
+  // const router = useRouter();
+  //
   return (
     <div
-      onClick={() => router.push("/portfolio/strava")}
-      className="bg-white w-screen pt-24 grid grid-cols-2 px-6 md:px-0 md:grid-cols-3 gap-y-3.5 gap-x-4 md:gap-x-8 md:gap-y-8 lg:gap-x-11 lg:gap-y-11">
-      {Array.from({ length: 12 }).map((_, i) => (
+      // onClick={() => router.push("/portfolio/strava")}
+      className="bg-white w-screen overflow-hidden max-h-screen pt-24 grid grid-cols-2 px-6 md:px-0 md:grid-cols-3 gap-y-3.5 gap-x-4 md:gap-x-8 md:gap-y-8 lg:gap-x-11 lg:gap-y-11">
+      <InfiniteVerticalCarousel
+        render={(item, index) => (
+          <ImageCard
+            className="h-[426px] lg:min-w-[300px]"
+            image={item}
+            key={index}
+            withOverlay
+          />
+        )}
+        direction="bottomToTop"
+        images={images1}
+        fastDuration={55}
+      />
+      <InfiniteVerticalCarousel
+        render={(item, index) => (
+          <ImageCard
+            className="h-[426px] lg:min-w-[300px]"
+            image={item}
+            key={index}
+            withOverlay
+          />
+        )}
+        direction="topToBottom"
+        images={images2}
+        fastDuration={55}
+      />
+      <InfiniteVerticalCarousel
+        render={(item, index) => (
+          <ImageCard
+            className="h-[426px] lg:min-w-[300px]"
+            image={item}
+            key={index}
+            withOverlay
+          />
+        )}
+        direction="bottomToTop"
+        images={images3}
+        fastDuration={55}
+      />
+
+      {/* {Array.from({ length: 12 }).map((_, i) => (
         <div key={i} className="group h-72 w-full bg-blue-300 relative">
           <div className="absolute size-full bg-black/80 top-0 left-0 hidden z-20 group-hover:flex items-center justify-center">
             <Link
@@ -32,7 +76,7 @@ export default function Portfolio() {
             </Link>
           </div>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }

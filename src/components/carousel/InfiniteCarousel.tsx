@@ -1,26 +1,25 @@
 "use client";
 
 import useMeasure from "react-use-measure";
-import Card from "../card/Card";
 import { animate, useMotionValue, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+// import ImageCard from "../card/ImageCard";
 
-export default function InfiniteCarousel() {
-  const images = [
-    "/images/image_1.png",
-    "/images/image_2.png",
-    "/images/image_3.png",
-    "/images/image_4.png",
-    "/images/image_5.png",
-    "/images/image_6.png",
-    "/images/image_7.png",
-    "/images/image_8.png",
-  ];
+interface InfiniteCarouselProps {
+  images: string[];
+  direction?: "leftToRight" | "rightToLeft";
+  fastDuration?: number;
+  slowDuration?: number;
+  render: (image: string, index: number) => React.JSX.Element;
+}
 
-  const FAST_DURATION = 25;
-  const SLOW_DURATION = 75;
-
-  const [duration, setDuration] = useState(FAST_DURATION);
+export default function InfiniteCarousel({
+  fastDuration = 25,
+  slowDuration = 75,
+  images,
+  render,
+}: InfiniteCarouselProps) {
+  const [duration, setDuration] = useState(fastDuration);
 
   const [ref, { width }] = useMeasure();
 
@@ -63,16 +62,16 @@ export default function InfiniteCarousel() {
       ref={ref}
       onHoverStart={() => {
         setMustFinish(true);
-        setDuration(SLOW_DURATION);
+        setDuration(slowDuration);
       }}
       onHoverEnd={() => {
         setMustFinish(true);
-        setDuration(FAST_DURATION);
+        setDuration(fastDuration);
       }}
       style={{ x: xTranslation }}>
-      {[...images, ...images].map((item, index) => (
-        <Card image={item} key={index} />
-      ))}
+      {[...images, ...images].map((item, index) => {
+        return render(item, index);
+      })}
     </motion.div>
   );
 }

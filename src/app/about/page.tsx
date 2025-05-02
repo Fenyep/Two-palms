@@ -1,4 +1,5 @@
 import Reveal from "@/components/animations/Reveal";
+import ImageCard from "@/components/card/ImageCard";
 import InfiniteCarousel from "@/components/carousel/InfiniteCarousel";
 import LogoSvg from "@/components/LogoSvg";
 import Image from "next/image";
@@ -86,6 +87,17 @@ const AboutServicesSmall: AboutServiceProps[] = [
   },
 ];
 
+const images = [
+  "/images/image_1.png",
+  "/images/image_2.png",
+  "/images/image_3.png",
+  "/images/image_4.png",
+  "/images/image_5.png",
+  "/images/image_6.png",
+  "/images/image_7.png",
+  "/images/image_8.png",
+];
+
 export default function About() {
   return (
     <div className="space-y-6 bg-white pt-36 text-black">
@@ -105,7 +117,16 @@ export default function About() {
         </button>
       </Reveal>
       <div className="mb-[101px] max-w-screen overflow-x-hidden">
-        <InfiniteCarousel />
+        <InfiniteCarousel
+          images={images}
+          render={(item, index) => (
+            <ImageCard
+              className="h-[426px] min-w-[300px]"
+              image={item}
+              key={index}
+            />
+          )}
+        />
       </div>
       <div className="flex flex-col-reverse md:flex-col">
         <div className="flex flex-col lg:flex-row justify-between w-full mx-auto px-[25px] max-w-[1440px] gap-[48px] mb-[88px] md:mb-[193px]">
@@ -142,12 +163,17 @@ export default function About() {
           </Reveal>
         </div>
         <div className="flex gap-6 mb-[67px] md:mb-[193px] max-w-screen overflow-x-hidden">
-          <InfiniteCarousel />
-          {/* {Array.from({ length: 4 }).map((_, i) => (
-            <div
-              key={i}
-              className="h-[581px] md:h-[702px] w-full bg-blue-300"></div>
-          ))} */}
+          <InfiniteCarousel
+            images={images}
+            fastDuration={55}
+            render={(item, index) => (
+              <ImageCard
+                className="h-[426px] min-w-[300px]"
+                image={item}
+                key={index}
+              />
+            )}
+          />
         </div>
 
         <Reveal className="flex flex-col md:flex-row justify-between w-full mb-[285.64px] md:mb-[193px] mx-auto max-w-[1440px] gap-[55px] md:gap-4 px-[25px]">
