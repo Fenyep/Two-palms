@@ -150,7 +150,7 @@ export default function About() {
           ))} */}
         </div>
 
-        <Reveal className="flex flex-col md:flex-row justify-between w-full mb-[285.64px] md:mb-[193px] mx-auto max-w-[1440px] gap-[55px] md:gap-4 px-[25px] md:px-0">
+        <Reveal className="flex flex-col md:flex-row justify-between w-full mb-[285.64px] md:mb-[193px] mx-auto max-w-[1440px] gap-[55px] md:gap-4 px-[25px]">
           <Reveal className="left-section max-w-[246px] space-y-[18px]">
             <h2 className="font-semibold text-black text-[25px] leading-9">
               / About Lucia
@@ -178,7 +178,7 @@ export default function About() {
           </Reveal>
         </Reveal>
       </div>
-      <Reveal className="bg-[#F6F6F6] pt-[56px] md:pt-[82px] pb-[54px] md:pb-24 pl-[25px] md:pl-[59px] pr-[27px] md:pr-[278px] flex flex-col md:flex-row md:justify-between gap-[62px] md:gap-8">
+      <Reveal className="bg-[#F6F6F6] pt-[56px] md:pt-[82px] pb-[54px] md:pb-24 pl-[25px] md:pl-20 pr-[27px] md:pr-[278px] flex flex-col md:flex-row md:justify-between gap-[62px] md:gap-8">
         <Reveal className="left-section">
           <h2 className="font-semibold hidden md:block text-black text-[25px] leading-9">
             Full Service list

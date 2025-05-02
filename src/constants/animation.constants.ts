@@ -65,20 +65,17 @@ const secondTextVariant = {
 
 const menuVariants = {
   hidden: {
-    opacity: 0,
     x: "100%",
     borderTopLeftRadius: "50%",
     borderBottomLeftRadius: "50%",
   }, // Off-screen to the right
   visible: {
-    opacity: 1,
     x: 0,
     borderTopLeftRadius: 0,
     borderBottomLeftRadius: 0,
     transition: { duration: 0.7, ease: "easeInOut" },
   },
   exit: {
-    opacity: 0,
     x: "100%",
     borderTopLeftRadius: "50%",
     borderBottomLeftRadius: "50%",

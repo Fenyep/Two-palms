@@ -35,20 +35,22 @@ export default function Footer() {
                   whileHover={"hover"}
                   animate="animate"
                   className="relative z-10 whitespace-nowrap cursor-pointer uppercase mix-blend-difference p-1">
-                  <div className="overflow-hidden relative text-white">
-                    <motion.a
-                      variants={firstTextVariant}
-                      href={elmt.href}
-                      className="z-20 block pb-0.5">
-                      {elmt.label}
-                    </motion.a>
-                    <motion.a
-                      variants={secondTextVariant}
-                      aria-hidden
-                      href={elmt.href}
-                      className="absolute top-0 left-0 z-20 underline underline-offset-2">
-                      {elmt.label}
-                    </motion.a>
+                  <div className="overflow-hidden relative">
+                    <Link href={elmt.href}>
+                      <motion.span
+                        variants={firstTextVariant}
+                        // href={elmt.href}
+                        className="z-20 block pb-0.5">
+                        {elmt.label}
+                      </motion.span>
+                      <motion.span
+                        variants={secondTextVariant}
+                        aria-hidden
+                        // href={elmt.href}
+                        className="absolute top-0 left-0 z-20 underline underline-offset-2">
+                        {elmt.label}
+                      </motion.span>
+                    </Link>
                   </div>
                 </motion.li>
               ))}
@@ -74,16 +76,16 @@ export default function Footer() {
               </Link> */}
             </ul>
             <div className="flex flex-col gap-y-[13px]">
-              <Link
-                href="#"
+              <a
+                href="https://www.instagram.com/twopalmsproductions/?hl=en-gb"
                 className="hover:underline hover:underline-offset-2">
                 Instagram
-              </Link>
-              <Link
-                href="#"
+              </a>
+              <a
+                href="https://www.linkedin.com/company/twopalmsproductions/about/"
                 className="hover:underline hover:underline-offset-2">
                 LinkedIn
-              </Link>
+              </a>
             </div>
           </div>
         </div>

@@ -52,19 +52,21 @@ export default function Navbar() {
                   animate="animate"
                   className="relative z-10 whitespace-nowrap cursor-pointer uppercase mix-blend-difference">
                   <div className="overflow-hidden relative">
-                    <motion.a
-                      variants={firstTextVariant}
-                      href={elmt.href}
-                      className="z-20 block">
-                      {elmt.label}
-                    </motion.a>
-                    <motion.a
-                      variants={secondTextVariant}
-                      aria-hidden
-                      href={elmt.href}
-                      className="absolute top-0 left-0 z-20">
-                      {elmt.label}
-                    </motion.a>
+                    <Link href={elmt.href}>
+                      <motion.span
+                        variants={firstTextVariant}
+                        // href={elmt.href}
+                        className="z-20 block">
+                        {elmt.label}
+                      </motion.span>
+                      <motion.span
+                        variants={secondTextVariant}
+                        aria-hidden
+                        // href={elmt.href}
+                        className="absolute top-0 left-0 z-20">
+                        {elmt.label}
+                      </motion.span>
+                    </Link>
                   </div>
                 </motion.li>
 
@@ -78,20 +80,22 @@ export default function Navbar() {
               initial="initial"
               whileHover={"hover"}
               animate="animate"
-              className="overflow-hidden relative text-[#111204] font-bold">
-              <motion.a
-                variants={firstTextVariant}
-                href={"/contact"}
-                className="z-20 block">
-                Contact
-              </motion.a>
-              <motion.a
-                variants={secondTextVariant}
-                aria-hidden
-                href={"/contact"}
-                className="absolute top-0 left-0 z-20">
-                Contact
-              </motion.a>
+              className="relative text-[#111204] font-bold">
+              <div className="overflow-hidden relative">
+                <Link href={"/contact"}>
+                  <motion.span
+                    variants={firstTextVariant}
+                    className="z-20 block">
+                    Contact
+                  </motion.span>
+                  <motion.span
+                    variants={secondTextVariant}
+                    aria-hidden
+                    className="absolute top-0 left-0 z-20">
+                    Contact
+                  </motion.span>
+                </Link>
+              </div>
             </motion.div>
 
             {/* Static underline holder */}
