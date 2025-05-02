@@ -30,9 +30,9 @@ export default async function PortfolioDetails() {
 
   return (
     <div className="flex bg-white pt-4 md:pt-24 flex-col md:flex-row min-h-screen w-screen">
-      <section className="left-section w-full md:w-2/5 md:mt-32 mb-[77px] md:mb-0 pl-[25px] md:pl-10">
-        <div className="max-w-[310px] mt-24">
-          <div>
+      <section className="left-section relative w-full md:w-2/5 md:mt-32 mb-[77px] md:mb-0 pl-[25px] md:pl-10">
+        <div className="max-w-[310px] sticky top-0">
+          <div className="pt-24">
             <div className="text-black text-[18px] leading-6 space-y-2">
               <h1 className="font-semibold">MIRAMONO</h1>
               <p>Germany</p>
