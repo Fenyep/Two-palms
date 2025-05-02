@@ -1,4 +1,5 @@
 "use client";
+
 import Reveal from "@/components/animations/Reveal";
 import ImageCard from "@/components/card/ImageCard";
 import InfiniteCarousel from "@/components/carousel/InfiniteCarousel";
@@ -31,16 +32,15 @@ export default function About() {
         </button>
       </Reveal>
       <div className="mb-[101px] max-w-screen overflow-x-hidden">
-        <InfiniteCarousel
-          images={images1}
-          render={(item, index) => (
+        <InfiniteCarousel fastDuration={55}>
+          {[...images1, ...images1].map((item, index) => (
             <ImageCard
               className="h-[426px] min-w-[300px]"
               image={item}
               key={index}
             />
-          )}
-        />
+          ))}
+        </InfiniteCarousel>
       </div>
       <div className="flex flex-col-reverse md:flex-col">
         <div className="flex flex-col lg:flex-row justify-between w-full mx-auto px-[25px] max-w-[1440px] gap-[48px] mb-[88px] md:mb-[193px]">
@@ -77,17 +77,15 @@ export default function About() {
           </Reveal>
         </div>
         <div className="flex gap-6 mb-[67px] md:mb-[193px] max-w-screen overflow-x-hidden">
-          <InfiniteCarousel
-            images={images2}
-            fastDuration={55}
-            render={(item, index) => (
+          <InfiniteCarousel fastDuration={55}>
+            {[...images2, ...images2].map((item, index) => (
               <ImageCard
                 className="h-[426px] min-w-[300px]"
                 image={item}
                 key={index}
               />
-            )}
-          />
+            ))}
+          </InfiniteCarousel>
         </div>
 
         <Reveal className="flex flex-col md:flex-row justify-between w-full mb-[285.64px] md:mb-[193px] mx-auto max-w-[1440px] gap-[55px] md:gap-4 px-[25px]">

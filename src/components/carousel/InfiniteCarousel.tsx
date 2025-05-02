@@ -3,21 +3,18 @@
 import useMeasure from "react-use-measure";
 import { animate, useMotionValue, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-// import ImageCard from "../card/ImageCard";
 
 interface InfiniteCarouselProps {
-  images: string[];
   direction?: "leftToRight" | "rightToLeft";
   fastDuration?: number;
   slowDuration?: number;
-  render: (image: string, index: number) => React.JSX.Element;
+  children: React.ReactNode;
 }
 
 export default function InfiniteCarousel({
   fastDuration = 25,
   slowDuration = 75,
-  images,
-  render,
+  children,
 }: InfiniteCarouselProps) {
   const [duration, setDuration] = useState(fastDuration);
 
@@ -69,9 +66,7 @@ export default function InfiniteCarousel({
         setDuration(fastDuration);
       }}
       style={{ x: xTranslation }}>
-      {[...images, ...images].map((item, index) => {
-        return render(item, index);
-      })}
+      {children}
     </motion.div>
   );
 }

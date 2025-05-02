@@ -1,4 +1,5 @@
 "use client";
+
 import ImageCard from "@/components/card/ImageCard";
 import InfiniteVerticalCarousel from "@/components/carousel/InfiniteVerticalCarousel";
 import { images1, images2, images3 } from "@/lib/data";

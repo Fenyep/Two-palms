@@ -1,4 +1,5 @@
 "use client";
+
 import Reveal from "@/components/animations/Reveal";
 import ImageCard from "@/components/card/ImageCard";
 import InfiniteVerticalCarousel from "@/components/carousel/InfiniteVerticalCarousel";
