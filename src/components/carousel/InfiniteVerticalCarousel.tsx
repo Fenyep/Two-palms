@@ -9,12 +9,14 @@ export default function InfiniteVerticalCarousel({
   images,
   fastDuration = 25,
   slowDuration = 75,
+  withSlow = false,
   render,
 }: {
   direction?: "topToBottom" | "bottomToTop";
   images: string[];
   fastDuration?: number;
   slowDuration?: number;
+  withSlow?: boolean;
   render: (image: string, index: number) => React.JSX.Element;
 }) {
   const [duration, setDuration] = useState(fastDuration);
@@ -83,12 +85,16 @@ export default function InfiniteVerticalCarousel({
       className="text-black flex flex-col gap-4"
       ref={ref}
       onHoverStart={() => {
-        setMustFinish(true);
-        setDuration(slowDuration);
+        if (withSlow) {
+          setMustFinish(true);
+          setDuration(slowDuration);
+        }
       }}
       onHoverEnd={() => {
-        setMustFinish(true);
-        setDuration(fastDuration);
+        if (withSlow) {
+          setMustFinish(true);
+          setDuration(fastDuration);
+        }
       }}
       style={{ y: yTranslation }}>
       {[...images, ...images].map((item, index) => {
