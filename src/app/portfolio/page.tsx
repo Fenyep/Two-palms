@@ -11,12 +11,7 @@ export default function Portfolio() {
       <InfiniteVerticalCarousel
         withSlow
         render={(item, index) => (
-          <ImageCard
-            className="h-[426px] lg:min-w-[300px]"
-            image={item}
-            key={index}
-            withOverlay
-          />
+          <ImageCard className="h-80" image={item} key={index} withOverlay />
         )}
         direction="bottomToTop"
         images={images1}
@@ -25,12 +20,7 @@ export default function Portfolio() {
       <InfiniteVerticalCarousel
         withSlow
         render={(item, index) => (
-          <ImageCard
-            className="h-[426px] lg:min-w-[300px]"
-            image={item}
-            key={index}
-            withOverlay
-          />
+          <ImageCard className="h-80" image={item} key={index} withOverlay />
         )}
         direction="topToBottom"
         images={images2}
@@ -39,12 +29,7 @@ export default function Portfolio() {
       <InfiniteVerticalCarousel
         withSlow
         render={(item, index) => (
-          <ImageCard
-            className="h-[426px] lg:min-w-[300px]"
-            image={item}
-            key={index}
-            withOverlay
-          />
+          <ImageCard className="h-80" image={item} key={index} withOverlay />
         )}
         direction="bottomToTop"
         images={images3}
@@ -53,12 +38,7 @@ export default function Portfolio() {
       <InfiniteVerticalCarousel
         withSlow
         render={(item, index) => (
-          <ImageCard
-            className="h-[426px] lg:min-w-[300px]"
-            image={item}
-            key={index}
-            withOverlay
-          />
+          <ImageCard className="h-80" image={item} key={index} withOverlay />
         )}
         direction="topToBottom"
         images={images1}
