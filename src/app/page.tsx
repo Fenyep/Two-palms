@@ -9,7 +9,7 @@ import { images1, images2, images3 } from "@/lib/data";
 export default function Home() {
   return (
     <div className="flex flex-col-reverse md:flex-row md:min-h-screen w-screen bg-white">
-      <section className="left-section w-full md:w-1/2 h-auto md:h-screen grid grid-cols-2 px-6 sm:px-0 sm:grid-cols-3 gap-4 sm:gap-x-8 md:gap-x-2 lg:gap-x-8 gap-y-6 max-h-[900px] overflow-hidden">
+      <section className="left-section w-full md:w-1/2 max-h-screen grid grid-cols-2 px-6 sm:px-0 sm:grid-cols-3 gap-4 sm:gap-x-8 md:gap-x-2 lg:gap-x-8 gap-y-6 overflow-hidden">
         <InfiniteVerticalCarousel
           fastDuration={45}
           images={images1}

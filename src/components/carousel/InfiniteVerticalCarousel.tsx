@@ -52,7 +52,7 @@ export default function InfiniteVerticalCarousel({
           duration:
             direction === "bottomToTop"
               ? duration * (1 - yTranslation.get() / finalPosition)
-              : duration * (1 - yTranslation.get() / -finalPosition / 2),
+              : duration * (1 - yTranslation.get() / -finalPosition),
           onComplete: () => {
             setMustFinish(false);
             setReRender(!reRender);
@@ -62,9 +62,7 @@ export default function InfiniteVerticalCarousel({
     } else {
       controls = animate(
         yTranslation,
-        direction === "bottomToTop"
-          ? [0, finalPosition]
-          : [finalPosition * 1.5, 0],
+        direction === "bottomToTop" ? [0, finalPosition] : [finalPosition, 0],
         {
           repeat: Infinity,
           repeatType: "loop",
