@@ -1,10 +1,8 @@
 "use client";
 
 import useMeasure from "react-use-measure";
-// import Card from "../card/Card";
 import { animate, useMotionValue, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-// import ImageCard from "../card/ImageCard";
 
 export default function InfiniteVerticalCarousel({
   direction = "topToBottom",
@@ -30,19 +28,29 @@ export default function InfiniteVerticalCarousel({
 
   useEffect(() => {
     let controls;
-    const finalPosition =
-      direction === "bottomToTop" ? -height / 2 - 16 : -height / 2 - 16;
+    const finalPosition = -height / 2 - 8;
+    console.log(direction, "height", height, "finalPosition", finalPosition);
 
     if (mustFinish) {
+      console.log(
+        direction,
+        duration,
+        yTranslation.get(),
+        finalPosition
+        // duration * (1 - yTranslation.get() / -finalPosition)
+      );
+
       controls = animate(
         yTranslation,
         direction === "bottomToTop"
           ? [yTranslation.get(), finalPosition]
-          : [finalPosition, yTranslation.get()],
-        // [yTranslation.get(), finalPosition],
+          : [yTranslation.get(), -finalPosition],
         {
           ease: "linear",
-          duration: duration * (1 - yTranslation.get() / finalPosition),
+          duration:
+            direction === "bottomToTop"
+              ? duration * (1 - yTranslation.get() / finalPosition)
+              : duration * (1 - yTranslation.get() / -finalPosition / 2),
           onComplete: () => {
             setMustFinish(false);
             setReRender(!reRender);
@@ -52,8 +60,9 @@ export default function InfiniteVerticalCarousel({
     } else {
       controls = animate(
         yTranslation,
-        direction === "bottomToTop" ? [0, finalPosition] : [finalPosition, 0],
-        // [0, finalPosition],
+        direction === "bottomToTop"
+          ? [0, finalPosition]
+          : [finalPosition * 1.5, 0],
         {
           repeat: Infinity,
           repeatType: "loop",

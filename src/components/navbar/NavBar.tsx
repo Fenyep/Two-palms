@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 export default function Navbar() {
   const { setIsOpened, navlinks } = useMenuContext();
   return (
-    <div className="flex w-full px-7 py-4 fixed top-0 z-30 bg-white">
+    <div className="flex w-full px-7 py-4 fixed top-0 z-30">
       <div className="w-1/2 sm:w-1/3 lg:w-1/2">
         <Link href="/" className="flex items-center gap-2.5 w-fit">
           <div className="w-[38px] h-[41px]">
