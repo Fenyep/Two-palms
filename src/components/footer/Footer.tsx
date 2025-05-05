@@ -54,28 +54,8 @@ export default function Footer() {
                   </div>
                 </motion.li>
               ))}
-              {/* <Link
-                href="#"
-                className="hover:underline hover:underline-offset-2">
-                Home
-              </Link>
-              <Link
-                href="#"
-                className="hover:underline hover:underline-offset-2">
-                Portfolio
-              </Link>
-              <Link
-                href="#"
-                className="hover:underline hover:underline-offset-2">
-                Location
-              </Link>
-              <Link
-                href="#"
-                className="hover:underline hover:underline-offset-2">
-                About
-              </Link> */}
             </ul>
-            <div className="flex flex-col gap-y-[13px]">
+            <div className="flex flex-col gap-y-[14px] sm:gap-2 text-2xl ml-1 sm:ml-0">
               <a
                 href="https://www.instagram.com/twopalmsproductions/?hl=en-gb"
                 className="hover:underline hover:underline-offset-2">

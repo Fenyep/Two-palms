@@ -14,7 +14,7 @@ export default function Home() {
         <InfiniteCarousel fastDuration={45} direction="topToBottom">
           {images1.map((item, index) => (
             <ImageCard
-              className="min-h-80 xl:min-h-96 3xl:min-h-[726px]"
+              className="min-h-52 md:min-h-80 xl:min-h-96 3xl:min-h-[726px]"
               image={item}
               key={index}
             />
@@ -27,7 +27,7 @@ export default function Home() {
           hoverBehavior="slow">
           {images2.map((item, index) => (
             <ImageCard
-              className="min-h-80 xl:min-h-96 3xl:min-h-[726px]"
+              className="min-h-52 md:min-h-80 xl:min-h-96 3xl:min-h-[726px]"
               image={item}
               key={index}
             />
@@ -39,7 +39,7 @@ export default function Home() {
           hoverBehavior="pause">
           {images3.map((item, index) => (
             <ImageCard
-              className="min-h-80 xl:min-h-96 3xl:min-h-[726px]"
+              className="min-h-52 md:min-h-80 xl:min-h-96 3xl:min-h-[726px]"
               image={item}
               key={index}
             />
