@@ -20,13 +20,14 @@ export default function Home() {
           fastDuration={45}
           images={images2}
           direction="bottomToTop"
-          withSlow
+          hoverBehavior="slow"
           render={(item, index) => <ImageCard image={item} key={index} />}
         />
         <InfiniteVerticalCarousel
           fastDuration={45}
           images={images3}
           direction="topToBottom"
+          hoverBehavior="pause"
           render={(item, index) => <ImageCard image={item} key={index} />}
         />
       </section>

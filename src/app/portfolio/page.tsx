@@ -9,7 +9,7 @@ export default function Portfolio() {
     // <div className="bg-white w-screen overflow-hidden max-h-screen pt-24 grid grid-cols-2 px-6 md:px-0 md:grid-cols-3 gap-y-3.5 gap-x-4 md:gap-x-8 md:gap-y-8 lg:gap-x-11 lg:gap-y-11">
     <div className="w-screen max-h-screen overflow-hidden bg-white pt-24 grid grid-cols-2 px-6 md:px-0 md:grid-cols-4 gap-y-3.5 gap-x-4 md:gap-x-8 md:gap-y-8 lg:gap-[42px]">
       <InfiniteVerticalCarousel
-        withSlow
+        hoverBehavior="pause"
         render={(item, index) => (
           <ImageCard className="h-80" image={item} key={index} withOverlay />
         )}
@@ -18,7 +18,7 @@ export default function Portfolio() {
         fastDuration={55}
       />
       <InfiniteVerticalCarousel
-        withSlow
+        hoverBehavior="pause"
         render={(item, index) => (
           <ImageCard className="h-80" image={item} key={index} withOverlay />
         )}
@@ -27,7 +27,7 @@ export default function Portfolio() {
         fastDuration={55}
       />
       <InfiniteVerticalCarousel
-        withSlow
+        hoverBehavior="pause"
         render={(item, index) => (
           <ImageCard className="h-80" image={item} key={index} withOverlay />
         )}
@@ -36,7 +36,7 @@ export default function Portfolio() {
         fastDuration={55}
       />
       <InfiniteVerticalCarousel
-        withSlow
+        hoverBehavior="pause"
         render={(item, index) => (
           <ImageCard className="h-80" image={item} key={index} withOverlay />
         )}

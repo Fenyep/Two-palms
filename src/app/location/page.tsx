@@ -12,6 +12,7 @@ export default function Location() {
           <ImageCard className="h-80" image={item} key={index} />
         )}
         direction="bottomToTop"
+        hoverBehavior="pause"
         images={images1}
         fastDuration={55}
       />
@@ -20,6 +21,7 @@ export default function Location() {
           <ImageCard className="h-80" image={item} key={index} />
         )}
         direction="topToBottom"
+        hoverBehavior="pause"
         images={images2}
         fastDuration={55}
       />
@@ -28,6 +30,7 @@ export default function Location() {
           <ImageCard className="h-80" image={item} key={index} />
         )}
         direction="bottomToTop"
+        hoverBehavior="pause"
         images={images3}
         fastDuration={55}
       />
@@ -37,6 +40,7 @@ export default function Location() {
           <ImageCard className="h-72" image={item} key={index} />
         )}
         direction="topToBottom"
+        hoverBehavior="pause"
         images={images2}
         fastDuration={55}
       />
