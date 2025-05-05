@@ -23,7 +23,7 @@ export default function HomeHero() {
 
       <div className="w-full">
         <button
-          onClick={() => router.push("/contact")}
+          onClick={() => router.push("/portfolio")}
           className="flex sm:hidden mx-auto justify-center cursor-pointer items-center gap-3.5 text-white py-[12.367px] px-[18.55px] bg-black"
           type="button">
           <span className="text-[18px] font-normal tracking-[-0.346px] uppercase">
@@ -58,7 +58,7 @@ export default function HomeHero() {
           }
           onClick={() => {
             console.log("click");
-            router.push("/contact");
+            router.push("/portfolio");
           }}
           className="hidden sm:flex mx-auto justify-center cursor-pointer items-center gap-3.5 text-white py-[12.367px] w-52 bg-black relative overflow-hidden"
           type="button">

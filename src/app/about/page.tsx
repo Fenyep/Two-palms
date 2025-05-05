@@ -85,8 +85,7 @@ export default function About() {
         <InfiniteCarousel
           fastDuration={15}
           slowDuration={45}
-          direction="rightToLeft"
-          hoverBehavior="slow">
+          direction="rightToLeft">
           {images1.map((item, index) => (
             <ImageCard
               className="h-[426px] min-w-[300px]"
@@ -134,7 +133,7 @@ export default function About() {
           <InfiniteCarousel
             fastDuration={35}
             // slowDuration={45}
-            hoverBehavior="slow">
+          >
             {images2.map((item, index) => (
               <ImageCard
                 className="h-[426px] min-w-[300px]"
