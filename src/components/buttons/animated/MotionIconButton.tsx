@@ -38,7 +38,7 @@ export interface ButtonProps
 }
 
 const MotionIconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, icon, className, iconX = -10 }, ref) => {
+  ({ children, icon, className, iconX = -10, onClick }, ref) => {
     const iconVariant = {
       initial: {
         x: "100%",
@@ -66,7 +66,8 @@ const MotionIconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         animate="animate"
         variants={backgroundVariant}
         ref={ref}
-        className={cn("", className)}>
+        className={cn("", className)}
+        onClick={onClick}>
         <div className="overflow-hidden relative">
           <motion.p
             variants={firstTextVariant}

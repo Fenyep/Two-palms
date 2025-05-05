@@ -1,6 +1,7 @@
 "use client";
 
 import Reveal from "@/components/animations/Reveal";
+import MotionIconButton from "@/components/buttons/animated/MotionIconButton";
 import ImageCard from "@/components/card/ImageCard";
 import InfiniteCarousel from "@/components/carousel/InfiniteCarousel";
 import LogoSvg from "@/components/LogoSvg";
@@ -12,8 +13,10 @@ import {
   images2,
 } from "@/lib/data";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function About() {
+  const router = useRouter();
   return (
     <div className="space-y-6 bg-white pt-36 text-black">
       <Reveal className="pl-[25px] max-w-[308px] md:pr-[25px] sm:max-w-[560px] lg:max-w-max md:ml-[59px] space-y-[42px] md:space-y-8 mb-[90px] md:mb-[116px]">
@@ -22,14 +25,61 @@ export default function About() {
             We are a BRAZILIAN Full-Service Production Company
           </h1>
         </div>
+        <div className="w-fit">
+          <button
+            onClick={() => router.push("/contact")}
+            className="flex sm:hidden justify-center cursor-pointer items-center gap-3.5 text-white py-[12.367px] px-[18.55px] bg-black"
+            type="button">
+            <span className="text-[18px] font-normal tracking-[-0.346px] uppercase">
+              Begin project
+            </span>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M7.88382 0.494987L6.69074 1.68806L12.319 7.31627H0.0942383V8.97621H12.319L6.69074 14.6044L7.88382 15.7975L14.9385 8.74278L15.5091 8.14624L14.9385 7.5497L7.88382 0.494987Z"
+                fill="white"
+              />
+            </svg>
+          </button>
 
-        <button
+          <MotionIconButton
+            icon={
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7.88382 0.494987L6.69074 1.68806L12.319 7.31627H0.0942383V8.97621H12.319L6.69074 14.6044L7.88382 15.7975L14.9385 8.74278L15.5091 8.14624L14.9385 7.5497L7.88382 0.494987Z"
+                  fill="white"
+                />
+              </svg>
+            }
+            onClick={() => {
+              console.log("click");
+              router.push("/contact");
+            }}
+            className="hidden sm:flex justify-center cursor-pointer items-center gap-3.5 text-white py-[12.367px] w-52 bg-black relative overflow-hidden"
+            type="button">
+            <span className="text-[18px] font-normal tracking-[-0.346px] uppercase w-full">
+              Begin project
+            </span>
+          </MotionIconButton>
+
+          {/* <button
+        onClick
           className="flex justify-center cursor-pointer items-center gap-3.5 text-white py-[12.367px] px-[18.55px] bg-black"
           type="button">
           <span className="text-[18px] font-normal tracking-[-0.346px] uppercase">
             Begin project
           </span>
-        </button>
+        </button> */}
+        </div>
       </Reveal>
       <div className="mb-[101px] max-w-screen overflow-x-hidden">
         <InfiniteCarousel

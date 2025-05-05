@@ -50,7 +50,7 @@ export default function Navbar() {
                   initial="initial"
                   whileHover={"hover"}
                   animate="animate"
-                  className="relative z-10 whitespace-nowrap cursor-pointer uppercase mix-blend-difference">
+                  className="relative z-10 whitespace-nowrap cursor-pointer mix-blend-difference">
                   <div className="overflow-hidden relative">
                     <Link href={elmt.href}>
                       <motion.span
