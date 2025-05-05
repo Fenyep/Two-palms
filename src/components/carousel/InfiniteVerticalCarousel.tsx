@@ -11,18 +11,16 @@ import { useEffect, useRef, useState } from "react";
 
 export default function InfiniteVerticalCarousel({
   direction = "topToBottom",
-  images,
   fastDuration = 25,
   slowDuration = 75,
   hoverBehavior = "none",
-  render,
+  children,
 }: {
   direction?: "topToBottom" | "bottomToTop";
-  images: string[];
   fastDuration?: number;
   slowDuration?: number;
   hoverBehavior?: "pause" | "slow" | "none";
-  render: (image: string, index: number) => React.JSX.Element;
+  children: React.ReactNode;
 }) {
   // const [duration, setDuration] = useState(fastDuration);
   const [ref, { height }] = useMeasure();
@@ -168,9 +166,7 @@ export default function InfiniteVerticalCarousel({
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
       style={{ y: yTranslation }}>
-      {[...images, ...images].map((item, index) => {
-        return render(item, index);
-      })}
+      {children}
     </motion.div>
   );
 }
