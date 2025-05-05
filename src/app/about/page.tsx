@@ -130,10 +130,7 @@ export default function About() {
           </Reveal>
         </div>
         <div className="flex gap-6 mb-[67px] md:mb-[193px] max-w-screen overflow-x-hidden">
-          <InfiniteCarousel
-            fastDuration={35}
-            // slowDuration={45}
-          >
+          <InfiniteCarousel fastDuration={35}>
             {images2.map((item, index) => (
               <ImageCard
                 className="h-[426px] min-w-[300px]"
