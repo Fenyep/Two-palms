@@ -88,7 +88,7 @@ export default function MobileNavigation() {
                   <Link
                     href={"/contact"}
                     onClick={() => setIsOpened(false)} // Close menu on click
-                    className="underline text-white text-[32px] leading-[26px]">
+                    className="underline underline-offset-4 text-white text-[32px] leading-[26px]">
                     Contact
                   </Link>
                 </div>

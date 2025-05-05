@@ -16,8 +16,8 @@ import Image from "next/image";
 export default function About() {
   return (
     <div className="space-y-6 bg-white pt-36 text-black">
-      <Reveal className="px-[25px] md:ml-[59px] space-y-[42px] md:space-y-8 mb-[90px] md:mb-[116px]">
-        <div className="md:max-w-[734px] self-stretch pr-32 md:pr-24 lg:pr-0">
+      <Reveal className="pl-[25px] max-w-[308px] md:pr-[25px] sm:max-w-[560px] lg:max-w-max md:ml-[59px] space-y-[42px] md:space-y-8 mb-[90px] md:mb-[116px]">
+        <div className="md:max-w-[734px] self-stretch sm:pr-20 md:pr-24 lg:pr-0">
           <h1 className="font-bold text-[50px] md:text-[68px] leading-[52px] md:leading-[77px] tracking-[-0.7px] text-[#0F0E0E]">
             We are a BRAZILIAN Full-Service Production Company
           </h1>
@@ -32,8 +32,12 @@ export default function About() {
         </button>
       </Reveal>
       <div className="mb-[101px] max-w-screen overflow-x-hidden">
-        <InfiniteCarousel fastDuration={55}>
-          {[...images1, ...images1].map((item, index) => (
+        <InfiniteCarousel
+          fastDuration={15}
+          slowDuration={45}
+          direction="rightToLeft"
+          hoverBehavior="slow">
+          {images1.map((item, index) => (
             <ImageCard
               className="h-[426px] min-w-[300px]"
               image={item}
@@ -77,8 +81,11 @@ export default function About() {
           </Reveal>
         </div>
         <div className="flex gap-6 mb-[67px] md:mb-[193px] max-w-screen overflow-x-hidden">
-          <InfiniteCarousel fastDuration={55}>
-            {[...images2, ...images2].map((item, index) => (
+          <InfiniteCarousel
+            fastDuration={35}
+            // slowDuration={45}
+            hoverBehavior="slow">
+            {images2.map((item, index) => (
               <ImageCard
                 className="h-[426px] min-w-[300px]"
                 image={item}
