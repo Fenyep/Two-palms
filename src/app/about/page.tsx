@@ -5,6 +5,7 @@ import MotionIconButton from "@/components/buttons/animated/MotionIconButton";
 import ImageCard from "@/components/card/ImageCard";
 import InfiniteCarousel from "@/components/carousel/InfiniteCarousel";
 import LogoSvg from "@/components/LogoSvg";
+import { animatePageOut } from "@/lib/animations";
 import {
   AboutServiceProps,
   AboutServicesSmall,
@@ -27,7 +28,7 @@ export default function About() {
         </div>
         <div className="w-fit">
           <button
-            onClick={() => router.push("/contact")}
+            onClick={() => animatePageOut("/contact", router)}
             className="flex sm:hidden justify-center cursor-pointer items-center gap-3.5 text-white py-[12.367px] px-[18.55px] bg-black"
             type="button">
             <span className="text-[18px] font-normal tracking-[-0.346px] uppercase">
@@ -60,10 +61,7 @@ export default function About() {
                 />
               </svg>
             }
-            onClick={() => {
-              console.log("click");
-              router.push("/contact");
-            }}
+            onClick={() => animatePageOut("/contact", router)}
             className="hidden sm:flex justify-center cursor-pointer items-center gap-3.5 text-white py-[12.367px] w-52 bg-black relative overflow-hidden"
             type="button">
             <span className="text-[18px] font-normal tracking-[-0.346px] uppercase w-full">
