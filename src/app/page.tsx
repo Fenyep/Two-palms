@@ -14,7 +14,7 @@ export default function Home() {
         <InfiniteCarousel fastDuration={45} direction="topToBottom">
           {images1.map((item, index) => (
             <ImageCard
-              className="min-h-52 md:min-h-80 xl:min-h-96 2xl:min-h-[526px] 3xl:min-h-[726px]"
+              className="min-h-52 md:min-h-80 xl:min-h-96 2xl:min-h-[426px] 3xl:min-h-[626px]"
               image={item}
               key={index}
             />
@@ -24,7 +24,7 @@ export default function Home() {
         <InfiniteCarousel fastDuration={45} direction="bottomToTop">
           {images2.map((item, index) => (
             <ImageCard
-              className="min-h-52 md:min-h-80 xl:min-h-96 2xl:min-h-[526px] 3xl:min-h-[726px]"
+              className="min-h-52 md:min-h-80 xl:min-h-96 2xl:min-h-[426px] 3xl:min-h-[626px]"
               image={item}
               key={index}
             />
@@ -33,7 +33,7 @@ export default function Home() {
         <InfiniteCarousel fastDuration={45} direction="topToBottom">
           {images3.map((item, index) => (
             <ImageCard
-              className="min-h-52 md:min-h-80 xl:min-h-96 2xl:min-h-[526px] 3xl:min-h-[726px]"
+              className="min-h-52 md:min-h-80 xl:min-h-96 2xl:min-h-[426px] 3xl:min-h-[626px]"
               image={item}
               key={index}
             />
