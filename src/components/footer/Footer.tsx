@@ -1,6 +1,6 @@
 // import Image from "next/image";
 
-import Link from "next/link";
+// import Link from "next/link";
 import LogoSvg from "../LogoSvg";
 import Image from "next/image";
 import Reveal from "../animations/Reveal";
@@ -10,6 +10,7 @@ import {
   firstTextVariant,
   secondTextVariant,
 } from "@/constants/animation.constants";
+import TransitionLink from "../navbar/TransitionLink";
 
 export default function Footer() {
   const { navlinks } = useMenuContext();
@@ -36,7 +37,7 @@ export default function Footer() {
                   animate="animate"
                   className="relative z-10 whitespace-nowrap cursor-pointer uppercase mix-blend-difference p-1">
                   <div className="overflow-hidden relative">
-                    <Link href={elmt.href}>
+                    <TransitionLink href={elmt.href}>
                       <motion.span
                         variants={firstTextVariant}
                         // href={elmt.href}
@@ -50,7 +51,7 @@ export default function Footer() {
                         className="absolute top-0 left-0 z-20 underline underline-offset-2">
                         {elmt.label}
                       </motion.span>
-                    </Link>
+                    </TransitionLink>
                   </div>
                 </motion.li>
               ))}

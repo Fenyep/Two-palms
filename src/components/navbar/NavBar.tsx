@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import LogoSvg from "../LogoSvg";
 import { useMenuContext } from "@/hooks/guards/useMenuContext";
 import {
@@ -7,20 +6,21 @@ import {
   secondTextVariant,
 } from "@/constants/animation.constants";
 import { motion } from "framer-motion";
+import TransitionLink from "./TransitionLink";
 
 export default function Navbar() {
   const { setIsOpened, navlinks } = useMenuContext();
   return (
     <header className="flex w-full px-7 py-4 fixed top-0 z-30 bg-transparent mix-blend-difference">
       <div className="w-1/2 sm:w-1/3 lg:w-1/2">
-        <Link href="/" className="flex items-center gap-2.5 w-fit">
+        <TransitionLink href="/" className="flex items-center gap-2.5 w-fit">
           <div className="w-[38px] h-[41px]">
             <LogoSvg fillColor="white" />
           </div>
-          <p className="text-white w-[110px] sm:text-[16px] sm:font-normal leading-[18.284px] tracking-[-0.16px] font-bold">
+          <p className="text-white text-left w-[110px] sm:text-[16px] sm:font-normal leading-[18.284px] tracking-[-0.16px] font-bold">
             Two Palms Productions<sup>TM</sup>
           </p>
-        </Link>
+        </TransitionLink>
       </div>
 
       <div className=" w-1/2 sm:w-2/3 lg:w-1/2 flex justify-end">
@@ -52,7 +52,7 @@ export default function Navbar() {
                   animate="animate"
                   className="relative z-10 whitespace-nowrap cursor-pointer mix-blend-difference">
                   <div className="overflow-hidden relative">
-                    <Link href={elmt.href}>
+                    <TransitionLink href={elmt.href}>
                       <motion.span
                         variants={firstTextVariant}
                         // href={elmt.href}
@@ -66,7 +66,7 @@ export default function Navbar() {
                         className="absolute top-0 left-0 z-20">
                         {elmt.label}
                       </motion.span>
-                    </Link>
+                    </TransitionLink>
                   </div>
                 </motion.li>
 
@@ -82,7 +82,7 @@ export default function Navbar() {
               animate="animate"
               className="relative text-white font-bold">
               <div className="overflow-hidden relative">
-                <Link href={"/contact"}>
+                <TransitionLink href={"/contact"}>
                   <motion.span
                     variants={firstTextVariant}
                     className="z-20 block">
@@ -94,7 +94,7 @@ export default function Navbar() {
                     className="absolute top-0 left-0 z-20">
                     Contact
                   </motion.span>
-                </Link>
+                </TransitionLink>
               </div>
             </motion.div>
 
