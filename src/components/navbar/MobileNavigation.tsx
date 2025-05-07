@@ -98,7 +98,11 @@ export default function MobileNavigation() {
                   <TransitionLink
                     href={"/contact"}
                     callback={() => setIsOpened(false)} // Close menu on click
-                    className="underline underline-offset-4 text-white text-[32px] leading-[26px]">
+                    className={`${
+                      pathname === "/contact" || pathname.includes("/contact")
+                        ? "underline underline-offset-4"
+                        : "hover:underline hover:underline-offset-4"
+                    } text-white text-[32px] leading-[26px]`}>
                     Contact
                   </TransitionLink>
                 </div>
