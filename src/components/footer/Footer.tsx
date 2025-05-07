@@ -5,11 +5,11 @@ import LogoSvg from "../LogoSvg";
 import Image from "next/image";
 import Reveal from "../animations/Reveal";
 import { useMenuContext } from "@/hooks/guards/useMenuContext";
-import { motion } from "framer-motion";
-import {
-  firstTextVariant,
-  secondTextVariant,
-} from "@/constants/animation.constants";
+// import { motion } from "framer-motion";
+// import {
+//   firstTextVariant,
+//   secondTextVariant,
+// } from "@/constants/animation.constants";
 import TransitionLink from "../navbar/TransitionLink";
 
 export default function Footer() {
@@ -30,41 +30,39 @@ export default function Footer() {
           <div className="text-white md:gap-x-8 lg:gap-x-[66px] mt-[130px] md:mt-0 space-y-[13px] md:space-y-0 md:inline-flex text-[22px] font-normal leading-5">
             <ul className="flex flex-col gap-y-[13px]">
               {navlinks.map((elmt, index) => (
-                <motion.li
+                <li
                   key={elmt.label + index}
-                  initial="initial"
-                  whileHover={"hover"}
-                  animate="animate"
-                  className="relative z-10 whitespace-nowrap cursor-pointer uppercase mix-blend-difference p-1">
+                  // initial="initial"
+                  // whileHover={"hover"}
+                  // animate="animate"
+                  className="relative z-10 whitespace-nowrap cursor-pointer p-1">
                   <div className="overflow-hidden relative">
                     <TransitionLink href={elmt.href}>
-                      <motion.span
+                      {/* <motion.span
                         variants={firstTextVariant}
                         // href={elmt.href}
                         className="z-20 block pb-0.5">
                         {elmt.label}
-                      </motion.span>
-                      <motion.span
-                        variants={secondTextVariant}
-                        aria-hidden
+                      </motion.span> */}
+                      <span
+                        // variants={secondTextVariant}
+                        // aria-hidden
                         // href={elmt.href}
-                        className="absolute top-0 left-0 z-20 underline underline-offset-2">
+                        className="z-20 hover:underline text-white">
                         {elmt.label}
-                      </motion.span>
+                      </span>
                     </TransitionLink>
                   </div>
-                </motion.li>
+                </li>
               ))}
             </ul>
             <div className="flex flex-col gap-y-[14px] sm:gap-2 text-2xl ml-1 sm:ml-0">
               <a
-                target="_blank"
                 href="https://www.instagram.com/twopalmsproductions/?hl=en-gb"
                 className="hover:underline hover:underline-offset-2">
                 Instagram
               </a>
               <a
-                target="_blank"
                 href="https://www.linkedin.com/company/twopalmsproductions/about/"
                 className="hover:underline hover:underline-offset-2">
                 LinkedIn

@@ -66,19 +66,19 @@ const secondTextVariant = {
 const menuVariants = {
   hidden: {
     x: "100%",
-    borderTopLeftRadius: "50%",
-    borderBottomLeftRadius: "50%",
+    // borderTopLeftRadius: "50%",
+    // borderBottomLeftRadius: "50%",
   }, // Off-screen to the right
   visible: {
     x: 0,
-    borderTopLeftRadius: 0,
-    borderBottomLeftRadius: 0,
+    // borderTopLeftRadius: 0,
+    // borderBottomLeftRadius: 0,
     transition: { duration: 0.7, ease: "easeInOut" },
   },
   exit: {
     x: "100%",
-    borderTopLeftRadius: "50%",
-    borderBottomLeftRadius: "50%",
+    // borderTopLeftRadius: "50%",
+    // borderBottomLeftRadius: "50%",
     transition: { duration: 0.7, ease: "easeInOut" },
   },
 };
