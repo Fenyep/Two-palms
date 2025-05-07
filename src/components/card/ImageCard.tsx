@@ -4,6 +4,8 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React, { ComponentProps } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { animatePageOut } from "@/lib/animations";
+import { useRouter } from "next/navigation";
 
 interface ImageCardProps {
   image: string;
@@ -16,10 +18,11 @@ const ImageCard: React.FC<ImageCardProps> = ({
   withOverlay,
 }) => {
   const [showOverlay, setShowOverlay] = React.useState(false);
+  const router = useRouter();
   return (
     <motion.div
       className={cn(
-        "relative overflow-hidden h-56 w-full bg-slate-400 flex justify-center items-center",
+        "relative overflow-hidden size-full flex justify-center items-center",
         className
       )}
       onHoverStart={() => {
@@ -40,11 +43,11 @@ const ImageCard: React.FC<ImageCardProps> = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}>
             <div className="absolute size-full opacity-50 bg-black pointer-events-none" />
-            <motion.a
+            <motion.button
               initial={{ y: 10 }}
               animate={{ y: 0 }}
               exit={{ y: 10 }}
-              href="/portfolio/strava"
+              onClick={() => animatePageOut("/portfolio/strava", router)}
               className="flex mx-auto cursor-pointer z-10 justify-center items-center gap-2.5 text-black p-[10px_15px] bg-white">
               <span className="text-[14px] font-normal tracking-[-0.346px] uppercase">
                 Strava
@@ -60,11 +63,18 @@ const ImageCard: React.FC<ImageCardProps> = ({
                   fill="black"
                 />
               </svg>
-            </motion.a>
+            </motion.button>
           </motion.div>
         )}
       </AnimatePresence>
-      <Image src={image} alt={image} fill style={{ objectFit: "cover" }} />
+      <Image
+        src={image}
+        alt={image}
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: "100%", height: "auto" }}
+      />
     </motion.div>
   );
 };

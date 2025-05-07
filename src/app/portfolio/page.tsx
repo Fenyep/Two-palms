@@ -13,12 +13,7 @@ export default function Portfolio() {
         direction="bottomToTop"
         fastDuration={75}>
         {images1.map((item, index) => (
-          <ImageCard
-            className="min-h-52 md:min-h-80 xl:min-h-[626px]"
-            image={item}
-            key={index}
-            withOverlay
-          />
+          <ImageCard className="" image={item} key={index} withOverlay />
         ))}
       </InfiniteCarousel>
       <InfiniteCarousel
@@ -26,12 +21,7 @@ export default function Portfolio() {
         direction="topToBottom"
         fastDuration={75}>
         {images2.map((item, index) => (
-          <ImageCard
-            className="min-h-52 md:min-h-80 xl:min-h-[626px]"
-            image={item}
-            key={index}
-            withOverlay
-          />
+          <ImageCard className="" image={item} key={index} withOverlay />
         ))}
       </InfiniteCarousel>
       <InfiniteCarousel
@@ -39,12 +29,7 @@ export default function Portfolio() {
         direction="bottomToTop"
         fastDuration={75}>
         {images3.map((item, index) => (
-          <ImageCard
-            className="min-h-52 md:min-h-80 xl:min-h-[626px]"
-            image={item}
-            key={index}
-            withOverlay
-          />
+          <ImageCard className="" image={item} key={index} withOverlay />
         ))}
       </InfiniteCarousel>
     </div>

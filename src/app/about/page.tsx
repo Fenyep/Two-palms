@@ -86,7 +86,7 @@ export default function About() {
           direction="rightToLeft">
           {images1.map((item, index) => (
             <ImageCard
-              className="h-[426px] min-w-[300px]"
+              className="min-h-[426px] min-w-[300px]"
               image={item}
               key={index}
             />
@@ -131,7 +131,7 @@ export default function About() {
           <InfiniteCarousel fastDuration={35}>
             {images2.map((item, index) => (
               <ImageCard
-                className="h-[426px] min-w-[300px]"
+                className="min-h-[426px] min-w-[300px]"
                 image={item}
                 key={index}
               />

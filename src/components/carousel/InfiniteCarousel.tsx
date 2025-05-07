@@ -193,6 +193,7 @@ export default function InfiniteCarousel({
         y: isHorizontal ? 0 : yTranslation,
         flexDirection: isHorizontal ? "row" : "column",
         display: "flex",
+        alignItems: isHorizontal ? "center" : "flex-start",
         gap: "1rem",
       }}>
       {children}

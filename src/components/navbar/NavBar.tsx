@@ -60,7 +60,8 @@ export default function Navbar() {
                         // variants={firstTextVariant}
                         // href={elmt.href}
                         className={`z-20 block ${
-                          pathname === elmt.href
+                          (elmt.href === "/" && pathname === elmt.href) ||
+                          (elmt.href !== "/" && pathname.includes(elmt.href))
                             ? "underline underline-offset-4"
                             : "hover:underline hover:underline-offset-4"
                         }`}>

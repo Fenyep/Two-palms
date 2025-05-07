@@ -12,11 +12,7 @@ export default function Location() {
         hoverBehavior="pause"
         fastDuration={75}>
         {images1.map((item, index) => (
-          <ImageCard
-            className="min-h-52 md:min-h-80 xl:min-h-96 2xl:min-h-[426px] 3xl:min-h-[626px]"
-            image={item}
-            key={index}
-          />
+          <ImageCard className="" image={item} key={index} />
         ))}
       </InfiniteCarousel>
       <InfiniteCarousel
@@ -24,11 +20,7 @@ export default function Location() {
         hoverBehavior="pause"
         fastDuration={75}>
         {images2.map((item, index) => (
-          <ImageCard
-            className="min-h-52 md:min-h-80 xl:min-h-96 2xl:min-h-[426px] 3xl:min-h-[626px]"
-            image={item}
-            key={index}
-          />
+          <ImageCard className="" image={item} key={index} />
         ))}
       </InfiniteCarousel>
       <InfiniteCarousel
@@ -36,11 +28,7 @@ export default function Location() {
         hoverBehavior="pause"
         fastDuration={75}>
         {images3.map((item, index) => (
-          <ImageCard
-            className="min-h-52 md:min-h-80 xl:min-h-96 2xl:min-h-[426px] 3xl:min-h-[626px]"
-            image={item}
-            key={index}
-          />
+          <ImageCard className="" image={item} key={index} />
         ))}
       </InfiniteCarousel>
 
@@ -49,11 +37,7 @@ export default function Location() {
         hoverBehavior="pause"
         fastDuration={75}>
         {images2.map((item, index) => (
-          <ImageCard
-            className="min-h-52 md:min-h-80 xl:min-h-96 2xl:min-h-[426px] 3xl:min-h-[626px]"
-            image={item}
-            key={index}
-          />
+          <ImageCard className="" image={item} key={index} />
         ))}
       </InfiniteCarousel>
 

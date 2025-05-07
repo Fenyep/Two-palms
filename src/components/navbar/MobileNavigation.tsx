@@ -6,9 +6,11 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { menuVariants } from "@/constants/animation.constants";
 import TransitionLink from "./TransitionLink";
+import { usePathname } from "next/navigation";
 
 export default function MobileNavigation() {
   const { isOpened, setIsOpened, navlinks } = useMenuContext();
+  const pathname = usePathname();
   return (
     <div className={`relative`}>
       {/* Animated Menu */}
@@ -78,7 +80,15 @@ export default function MobileNavigation() {
                       <TransitionLink
                         href={link.href}
                         className="text-white text-[32px] leading-[26px]">
-                        {link.label}
+                        <span
+                          className={`${
+                            (link.href === "/" && pathname === link.href) ||
+                            (link.href !== "/" && pathname.includes(link.href))
+                              ? "underline underline-offset-4"
+                              : "hover:underline hover:underline-offset-4"
+                          }`}>
+                          {link.label}
+                        </span>
                       </TransitionLink>
                     </motion.li>
                   ))}

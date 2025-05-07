@@ -2,6 +2,9 @@
 // import { readItems } from "@directus/sdk";
 // import Image from "next/image";
 
+import ImageCard from "@/components/card/ImageCard";
+import { images2 } from "@/lib/data";
+
 // type Portfolio = {
 //   id: string;
 //   files: {
@@ -53,7 +56,7 @@ export default async function PortfolioDetails() {
           </div>
         </div>
       </section>
-      <section className="right-section w-full md:w-3/5 h-auto grid grid-cols-1 px-6 md:px-0 gap-4 md:gap-x-8 gap-y-6">
+      <section className="right-section w-full md:w-3/5 h-auto grid grid-cols-4 px-6 md:px-0 gap-4 md:gap-x-8 gap-y-6">
         {/* {(portfolios as unknown as Portfolio).files.map((file, i) => (
           <div key={i + 100} className="h-72 w-full">
             <Image
@@ -65,9 +68,18 @@ export default async function PortfolioDetails() {
             />
           </div>
         ))} */}
-        {Array.from({ length: 6 }).map((_, i) => (
-          <div key={i} className="h-72 w-full bg-blue-300"></div>
+        {images2.map((item, index) => (
+          <ImageCard
+            className="max-h-[726px] col-span-2"
+            image={item}
+            key={index}
+          />
         ))}
+        {/* <InfiniteCarousel fastDuration={35}>
+          </InfiniteCarousel> */}
+        {/* {Array.from({ length: 6 }).map((_, i) => (
+          <div key={i} className="h-72 w-full bg-blue-300"></div>
+        ))} */}
       </section>
     </div>
   );
