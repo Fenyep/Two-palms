@@ -1,9 +1,7 @@
 "use client";
 
-import Reveal from "@/components/animations/Reveal";
 import ImageCard from "@/components/card/ImageCard";
 import InfiniteCarousel from "@/components/carousel/InfiniteCarousel";
-// import InfiniteVerticalCarousel from "@/components/carousel/InfiniteVerticalCarousel";
 import HomeHero from "@/components/home/HomeHero";
 import { images1, images2, images3 } from "@/lib/data";
 
@@ -29,11 +27,9 @@ export default function Home() {
         </InfiniteCarousel>
       </section>
 
-      <Reveal
-        delay={0.5}
-        className="right-section w-full md:w-1/2 mt-32 md:mt-0 md:h-screen flex items-center justify-center">
+      <section className="right-section w-full md:w-1/2 mt-32 md:mt-0 md:h-screen flex items-center justify-center">
         <HomeHero />
-      </Reveal>
+      </section>
     </div>
   );
 }

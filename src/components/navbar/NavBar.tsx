@@ -20,7 +20,7 @@ export default function Navbar() {
           <div className="w-[38px] h-[41px]">
             <LogoSvg fillColor="black" />
           </div>
-          <p className="text-black text-left w-[110px] sm:text-[16px] sm:font-normal leading-[18.284px] tracking-[-0.16px] font-bold">
+          <p className="text-black text-left w-[110px] sm:text-[16px] leading-[18.284px] tracking-[-0.16px] font-bold">
             Two Palms Productions
           </p>
         </TransitionLink>
