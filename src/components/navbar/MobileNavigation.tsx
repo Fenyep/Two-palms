@@ -2,10 +2,10 @@
 
 import { useMenuContext } from "@/hooks/guards/useMenuContext";
 import LogoSvg from "../LogoSvg";
-import Link from "next/link";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { menuVariants } from "@/constants/animation.constants";
+import TransitionLink from "./TransitionLink";
 
 export default function MobileNavigation() {
   const { isOpened, setIsOpened, navlinks } = useMenuContext();
@@ -75,22 +75,22 @@ export default function MobileNavigation() {
                       key={link.href + index}
                       onClick={() => setIsOpened(false)} // Close menu on click
                     >
-                      <Link
+                      <TransitionLink
                         href={link.href}
                         className="text-white text-[32px] leading-[26px]">
                         {link.label}
-                      </Link>
+                      </TransitionLink>
                     </motion.li>
                   ))}
                 </ul>
 
                 <div className="">
-                  <Link
+                  <TransitionLink
                     href={"/contact"}
-                    onClick={() => setIsOpened(false)} // Close menu on click
+                    callback={() => setIsOpened(false)} // Close menu on click
                     className="underline underline-offset-4 text-white text-[32px] leading-[26px]">
                     Contact
-                  </Link>
+                  </TransitionLink>
                 </div>
               </nav>
             </div>

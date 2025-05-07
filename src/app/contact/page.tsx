@@ -44,7 +44,8 @@ export default function Contact() {
             <div className="mt-[52px] max-w-full">
               <ContactSection
                 title="Start a project"
-                content="partnerships@twopalmsproductions.com"
+                content="hello@twopalmsproductions.com"
+                type="mail"
               />
 
               <ContactSection
@@ -55,7 +56,7 @@ export default function Contact() {
             </div>
             <ContactSection
               title="Visit Us"
-              content="Av. Nossa Senhora de Copacabana 912/1201 22060-002 Copacabana"
+              content="Av. Nossa Senhora de Copacabana 912/STUDIO 1201 22060-002 Copacabana"
               className="mt-[46px] md:mt-[52px]"
             />
           </div>
@@ -71,20 +72,31 @@ interface ContactSectionProps {
   title: string;
   content: string;
   className?: string;
+  type?: "container" | "mail";
 }
 
 function ContactSection({
   title,
   content,
   className = "",
+  type = "container",
 }: ContactSectionProps) {
   return (
     <div className={`text-[21px] md:text-[18px] leading-5 ${className}`}>
       <h2 className="uppercase font-medium">{title}</h2>
-      <div
-        className={`pb-0 mt-2.5 md:mt-2 text-[16px] md:text-xl leading-[27px] tracking-[-0.19px] font-medium`}>
-        {content}
-      </div>
+      {type === "mail" ? (
+        <a
+          target="_blank"
+          href={`mailto:${content}`}
+          className={`inline-block hover:font-semibold hover:tracking-wide pb-0 mt-2.5 md:mt-2 text-[16px] md:text-xl leading-[27px] tracking-[-0.19px] font-medium`}>
+          {content}
+        </a>
+      ) : (
+        <div
+          className={`pb-0 mt-2.5 md:mt-2 text-[16px] md:text-xl leading-[27px] tracking-[-0.19px] font-medium`}>
+          {content}
+        </div>
+      )}
     </div>
   );
 }
@@ -112,6 +124,7 @@ function SocialLinks({ className = "" }: SocialLinksProps) {
         <a
           key={platform.title}
           href={platform.link}
+          target="_blank"
           className="self-stretch my-auto hover:underline md:text-[22px] font-medium"
           aria-label={`Visit our ${platform.title} page`}>
           {platform.title}

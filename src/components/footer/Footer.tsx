@@ -58,11 +58,13 @@ export default function Footer() {
             </ul>
             <div className="flex flex-col gap-y-[14px] sm:gap-2 text-2xl ml-1 sm:ml-0">
               <a
+                target="_blank"
                 href="https://www.instagram.com/twopalmsproductions/?hl=en-gb"
                 className="hover:underline hover:underline-offset-2">
                 Instagram
               </a>
               <a
+                target="_blank"
                 href="https://www.linkedin.com/company/twopalmsproductions/about/"
                 className="hover:underline hover:underline-offset-2">
                 LinkedIn

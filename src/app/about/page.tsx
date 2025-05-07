@@ -142,7 +142,7 @@ export default function About() {
         <Reveal className="flex flex-col md:flex-row justify-between w-full mb-[285.64px] md:mb-[193px] mx-auto max-w-[1440px] gap-[55px] md:gap-4 px-[25px]">
           <Reveal className="left-section max-w-[246px] space-y-[18px]">
             <h2 className="font-semibold text-black text-[25px] leading-9">
-              / About Lucia
+              About Lucia
             </h2>
 
             <Image
