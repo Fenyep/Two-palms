@@ -82,7 +82,6 @@ export default function About() {
         <InfiniteCarousel
           fastDuration={15}
           slowDuration={35}
-          hoverBehavior="pause"
           direction="rightToLeft">
           {images1.map((item, index) => (
             <ImageCard
