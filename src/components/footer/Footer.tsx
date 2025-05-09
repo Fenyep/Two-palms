@@ -14,9 +14,12 @@ export default function Footer() {
             <div className="font-normal md:font-bold leading-none">
               Just drop an &quot;oiii&quot;
             </div>
-            <div className="font-normal mt-[5px] max-md:max-w-full text-white/80 text-[18px] md:text-2xl">
+            <a
+              target="_blank"
+              href="mailto:hello@twopalmsproductions.com"
+              className="inline-block font-normal mt-[5px] max-md:max-w-full text-white/80 text-[18px] md:text-2xl">
               hello@twopalmsproductions.com
-            </div>
+            </a>
           </div>
 
           <div className="text-white md:gap-x-8 lg:gap-x-[66px] mt-[130px] md:mt-0 space-y-[13px] md:space-y-0 md:inline-flex text-[22px] font-normal leading-5">
@@ -37,11 +40,13 @@ export default function Footer() {
             </ul>
             <div className="flex flex-col gap-y-[14px] sm:gap-2 text-2xl ml-1 sm:ml-0">
               <a
+                target="_blank"
                 href="https://www.instagram.com/twopalmsproductions/?hl=en-gb"
                 className="hover:underline hover:underline-offset-2">
                 Instagram
               </a>
               <a
+                target="_blank"
                 href="https://www.linkedin.com/company/twopalmsproductions/about/"
                 className="hover:underline hover:underline-offset-2">
                 LinkedIn
