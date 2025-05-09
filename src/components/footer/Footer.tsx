@@ -1,7 +1,8 @@
 import LogoSvg from "../LogoSvg";
 import Image from "next/image";
 import { useMenuContext } from "@/hooks/guards/useMenuContext";
-import TransitionLink from "../navbar/TransitionLink";
+import Link from "next/link";
+// import TransitionLink from "../navbar/TransitionLink";
 
 export default function Footer() {
   const { navlinks } = useMenuContext();
@@ -25,11 +26,11 @@ export default function Footer() {
                   key={elmt.label + index}
                   className="relative z-10 whitespace-nowrap cursor-pointer p-1">
                   <div className="overflow-hidden relative">
-                    <TransitionLink href={elmt.href}>
+                    <Link href={elmt.href}>
                       <span className="z-20 hover:underline text-white">
                         {elmt.label}
                       </span>
-                    </TransitionLink>
+                    </Link>
                   </div>
                 </li>
               ))}

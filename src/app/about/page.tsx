@@ -4,7 +4,7 @@ import MotionIconButton from "@/components/buttons/animated/MotionIconButton";
 import ImageCard from "@/components/card/ImageCard";
 import InfiniteCarousel from "@/components/carousel/InfiniteCarousel";
 import LogoSvg from "@/components/LogoSvg";
-import { animatePageOut } from "@/lib/animations";
+// import { animatePageOut } from "@/lib/animations";
 import {
   AboutServiceProps,
   AboutServicesSmall,
@@ -27,7 +27,7 @@ export default function About() {
         </div>
         <div className="w-fit">
           <button
-            onClick={() => animatePageOut("/contact", router)}
+            onClick={() => router.push("/contact")}
             className="flex sm:hidden justify-center cursor-pointer items-center gap-3.5 text-white py-[12.367px] px-[18.55px] bg-black"
             type="button">
             <span className="text-[18px] font-normal tracking-[-0.346px] uppercase">
@@ -60,7 +60,7 @@ export default function About() {
                 />
               </svg>
             }
-            onClick={() => animatePageOut("/contact", router)}
+            onClick={() => router.push("/contact")}
             className="hidden sm:flex justify-center cursor-pointer items-center gap-3.5 text-white py-[12.367px] w-52 bg-black relative overflow-hidden"
             type="button">
             <span className="text-[18px] font-normal tracking-[-0.346px] uppercase w-full">
@@ -81,18 +81,19 @@ export default function About() {
       <section className="mb-[101px] max-w-screen overflow-x-hidden">
         <InfiniteCarousel
           fastDuration={15}
-          slowDuration={45}
+          slowDuration={35}
+          hoverBehavior="pause"
           direction="rightToLeft">
           {images1.map((item, index) => (
             <ImageCard
-              className="min-h-[426px] min-w-[300px]"
+              className="h-[250px] min-w-[250px] sm:h-[400px] sm:min-w-[300px]"
               image={item}
               key={index}
             />
           ))}
         </InfiniteCarousel>
       </section>
-      <section className="flex flex-col-reverse md:flex-col">
+      <section className="flex flex-col">
         <div className="flex flex-col lg:flex-row justify-between w-full mx-auto px-[25px] max-w-[1440px] gap-[48px] mb-[88px] md:mb-[193px]">
           <div className="left-section max-w-[246px]">
             <h2 className="font-semibold text-black text-xl md:text-[25px] leading-7 md:leading-9">
@@ -130,7 +131,7 @@ export default function About() {
           <InfiniteCarousel fastDuration={35}>
             {images2.map((item, index) => (
               <ImageCard
-                className="min-h-[426px] min-w-[300px]"
+                className="h-[400px] min-w-[300px]"
                 image={item}
                 key={index}
               />

@@ -5,8 +5,9 @@ import LogoSvg from "../LogoSvg";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { menuVariants } from "@/constants/animation.constants";
-import TransitionLink from "./TransitionLink";
+// import TransitionLink from "./TransitionLink";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function MobileNavigation() {
   const { isOpened, setIsOpened, navlinks } = useMenuContext();
@@ -77,7 +78,7 @@ export default function MobileNavigation() {
                       key={link.href + index}
                       onClick={() => setIsOpened(false)} // Close menu on click
                     >
-                      <TransitionLink
+                      <Link
                         href={link.href}
                         className="text-white text-[32px] leading-[26px]">
                         <span
@@ -89,22 +90,22 @@ export default function MobileNavigation() {
                           }`}>
                           {link.label}
                         </span>
-                      </TransitionLink>
+                      </Link>
                     </motion.li>
                   ))}
                 </ul>
 
                 <div className="">
-                  <TransitionLink
+                  <Link
                     href={"/contact"}
-                    callback={() => setIsOpened(false)} // Close menu on click
+                    onClick={() => setIsOpened(false)} // Close menu on click
                     className={`${
                       pathname === "/contact" || pathname.includes("/contact")
                         ? "underline underline-offset-4"
                         : "hover:underline hover:underline-offset-4"
                     } text-white text-[32px] leading-[26px]`}>
                     Contact
-                  </TransitionLink>
+                  </Link>
                 </div>
               </nav>
             </div>

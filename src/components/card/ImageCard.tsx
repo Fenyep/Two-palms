@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React, { ComponentProps } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { animatePageOut } from "@/lib/animations";
+// import { animatePageOut } from "@/lib/animations";
 import { useRouter } from "next/navigation";
 
 interface ImageCardProps {
@@ -47,7 +47,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
               initial={{ y: 10 }}
               animate={{ y: 0 }}
               exit={{ y: 10 }}
-              onClick={() => animatePageOut("/portfolio/strava", router)}
+              onClick={() => router.push("/portfolio/strava")}
               className="flex mx-auto cursor-pointer z-10 justify-center items-center gap-2.5 text-black p-[10px_15px] bg-white">
               <span className="text-[14px] font-normal tracking-[-0.346px] uppercase">
                 Strava
