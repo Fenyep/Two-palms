@@ -1,7 +1,7 @@
 import ImageCard from "@/components/card/ImageCard";
 import RichTextRenderer from "@/components/RichTextRenderer";
 import { getProjectDetailsPageFromSlug } from "@/lib/contentful";
-import { images2 } from "@/lib/data";
+// import { images2 } from "@/lib/data";
 
 export default async function PortfolioDetails() {
   const response = await getProjectDetailsPageFromSlug();
@@ -42,11 +42,18 @@ export default async function PortfolioDetails() {
         </div>
       </section>
       <section className="right-section w-full md:w-3/5 h-auto grid grid-cols-4 px-6 md:px-0 gap-4 md:gap-x-8 gap-y-6">
-        {images2.map((item, index) => (
+        {/* {images2.map((item, index) => (
           <ImageCard
             className="max-h-[726px] col-span-2"
             image={item}
             key={index}
+          />
+        ))} */}
+        {response.fields.carousels[0].fields.images.map((item, index) => (
+          <ImageCard
+            className="max-h-[726px] col-span-2"
+            image={`https:${item.fields.file.url}`}
+            key={`image-${index}`}
           />
         ))}
       </section>
