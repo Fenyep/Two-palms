@@ -91,20 +91,6 @@ export async function getPageWithCarousels(name?: string) {
 
   console.log("page", page);
 
-  //   // For any carousel references not included in the initial query
-  //   const carouselIds = page.fields.carousels.map((carousel) => carousel.sys.id);
-  //   let carousels: ICarousel[] = [];
-
-  //   // If we have carousel IDs, fetch all the referenced carousels
-  //   if (carouselIds.length > 0) {
-  //     const carouselResults = await contentfulClient.getEntries({
-  //       content_type: "carousel",
-  //       "sys.id[in]": carouselIds.join(","),
-  //     });
-
-  //     carousels = carouselResults.items as ICarousel[];
-  //   }
-
   return {
     page: page as unknown as IPage,
     // carousels,
@@ -150,13 +136,57 @@ type ProjectDetailsType = {
   };
 };
 
+type ProjectsPageType = {
+  fields: {
+    name: string;
+    projects: {
+      fields: {
+        clientName: string;
+        slug: string;
+        image: {
+          sys: {
+            id: string;
+          };
+          fields: {
+            title: string;
+            description: string;
+            file: {
+              url: string;
+              fileName: string;
+              title: string;
+              contentType: string;
+              details: {
+                size: number;
+                image: {
+                  width: number;
+                  height: number;
+                };
+              };
+            };
+          };
+        };
+      };
+    }[];
+  };
+};
+
 // Fetch all page slugs for static path generation
-export async function getProjectDetailsPageFromSlug() {
-  const pageResults = await contentfulClient.getEntry("1LTNraLWMFTbPqZLZkdqxG");
+export async function getProjectDetailsPageFromSlug(slug: string) {
+  const pageResults = await contentfulClient.getEntries({
+    content_type: "projectDetails",
+    "fields.slug": slug,
+    include: 1,
+  });
 
-  console.log(pageResults);
+  console.log("ProjectDetailsPageResult", pageResults);
 
-  return pageResults as unknown as ProjectDetailsType;
+  const page = pageResults.items[0];
+
+  if (!page) {
+    return null;
+  }
+
+  return page as unknown as ProjectDetailsType;
 
   // return pageResults.items.map((page) => ({
   //   params: {
@@ -178,3 +208,26 @@ export async function getProjectDetailsPageFromSlug() {
 //     },
 //   }));
 // }
+
+export async function getProjectsPageFromName(name?: string) {
+  const pageResult = await contentfulClient.getEntries({
+    content_type: "projectsPage",
+    "fields.name": name,
+    include: 1,
+  });
+
+  console.log("pageResult", pageResult);
+
+  const page = pageResult.items[0];
+
+  if (!page) {
+    return null;
+  }
+
+  // console.log("page", page);
+
+  return {
+    page: page as unknown as ProjectsPageType,
+    // carousels,
+  };
+}

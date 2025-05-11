@@ -3,8 +3,14 @@ import RichTextRenderer from "@/components/RichTextRenderer";
 import { getProjectDetailsPageFromSlug } from "@/lib/contentful";
 // import { images2 } from "@/lib/data";
 
-export default async function PortfolioDetails() {
-  const response = await getProjectDetailsPageFromSlug();
+export default async function PortfolioDetails({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const slug = (await params).id;
+
+  const response = await getProjectDetailsPageFromSlug(slug);
 
   console.log(response);
 
@@ -12,7 +18,7 @@ export default async function PortfolioDetails() {
     <div className="flex bg-white pt-4 md:pt-24 flex-col md:flex-row min-h-screen w-screen">
       <section className="left-section relative w-full md:w-2/5 md:mt-24 mb-[77px] md:mb-0 pl-[25px] md:pl-10">
         <div className="max-w-[310px] sticky top-0 pt-24">
-          {response.fields.authorDetails.content.map((item, index) => (
+          {response?.fields.authorDetails.content.map((item, index) => (
             <RichTextRenderer
               content={item}
               key={index + item.nodeType}
@@ -49,7 +55,7 @@ export default async function PortfolioDetails() {
             key={index}
           />
         ))} */}
-        {response.fields.carousels[0].fields.images.map((item, index) => (
+        {response?.fields.carousels[0].fields.images.map((item, index) => (
           <ImageCard
             className={`max-h-[726px] ${index !== 0 ? "mt-4" : ""}`}
             image={`https:${item.fields.file.url}`}

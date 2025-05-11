@@ -13,6 +13,8 @@ interface ImageCardProps {
   withOverlay?: boolean;
   height?: number;
   width?: number;
+  clientName?: string;
+  clientSlug?: string;
 }
 const ImageCard: React.FC<ImageCardProps> = ({
   image,
@@ -20,6 +22,8 @@ const ImageCard: React.FC<ImageCardProps> = ({
   withOverlay,
   height = 0,
   width = 0,
+  clientName,
+  clientSlug,
 }) => {
   const [showOverlay, setShowOverlay] = React.useState(false);
   const router = useRouter();
@@ -51,10 +55,12 @@ const ImageCard: React.FC<ImageCardProps> = ({
               initial={{ y: 10 }}
               animate={{ y: 0 }}
               exit={{ y: 10 }}
-              onClick={() => router.push("/portfolio/strava")}
+              onClick={() =>
+                router.push(`/portfolio/${clientSlug ?? "strava"}`)
+              }
               className="flex mx-auto cursor-pointer z-10 justify-center items-center gap-2.5 text-black p-[10px_15px] bg-white">
               <span className="text-[14px] font-normal tracking-[-0.346px] uppercase">
-                Strava
+                {clientName ?? "Strava"}
               </span>
               <svg
                 width="13"
@@ -78,7 +84,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
         height={height}
         onClick={() => {
           if (withOverlay && window.screen.width < 640) {
-            router.push("/portfolio/strava");
+            router.push(`/portfolio/${clientSlug ?? "strava"}`);
           }
         }}
         sizes="100vw"
