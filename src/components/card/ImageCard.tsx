@@ -76,6 +76,11 @@ const ImageCard: React.FC<ImageCardProps> = ({
         alt={image}
         width={width}
         height={height}
+        onClick={() => {
+          if (withOverlay && window.screen.width < 640) {
+            router.push("/portfolio/strava");
+          }
+        }}
         sizes="100vw"
         style={{ width: "100%", height: "auto" }}
       />
