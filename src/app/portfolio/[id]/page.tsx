@@ -41,7 +41,7 @@ export default async function PortfolioDetails() {
           </div> */}
         </div>
       </section>
-      <section className="right-section w-full md:w-3/5 h-auto grid grid-cols-4 px-6 md:px-0 gap-4 md:gap-x-8 gap-y-6">
+      <section className="right-section w-full md:w-3/5 h-auto columns-2 px-6 md:px-0 gap-4 md:gap-x-8 gap-y-6">
         {/* {images2.map((item, index) => (
           <ImageCard
             className="max-h-[726px] col-span-2"
@@ -51,7 +51,7 @@ export default async function PortfolioDetails() {
         ))} */}
         {response.fields.carousels[0].fields.images.map((item, index) => (
           <ImageCard
-            className="max-h-[726px] col-span-2"
+            className={`max-h-[726px] ${index !== 0 ? "mt-4" : ""}`}
             image={`https:${item.fields.file.url}`}
             key={`image-${index}`}
           />

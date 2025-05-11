@@ -9,13 +9,14 @@ export default async function Portfolio() {
   const response = await getPageWithCarousels("Portfolio");
 
   return (
-    <div className="w-screen bg-white start pt-24 grid grid-cols-2 px-6 md:px-0 md:grid-cols-3 gap-y-3.5 gap-x-4 md:gap-x-6 lg:gap-x-8 md:gap-y-8 lg:gap-[42px] items-start">
+    <div className="w-screen bg-white pt-24 columns-2 px-6 md:px-0 md:columns-3 gap-y-3.5 gap-x-4 md:gap-x-6 lg:gap-x-8 md:gap-y-8 lg:gap-[42px]">
       {response?.page ? (
         <>
           {response.page.fields.carousels[0].fields.images.map(
             (item, index) => (
               <ImageCard
-                // className={`height-[${item.fields.file.details.image.height}px]`}
+                height={item.fields.file.details.image.height}
+                className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
                 image={`https:${item.fields.file.url}`}
                 key={index}
                 withOverlay
@@ -26,7 +27,8 @@ export default async function Portfolio() {
           {response.page.fields.carousels[1].fields.images.map(
             (item, index) => (
               <ImageCard
-                // className={`height-[${item.fields.file.details.image.height}px]`}
+                height={item.fields.file.details.image.height}
+                className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
                 image={`https:${item.fields.file.url}`}
                 key={index}
                 withOverlay
@@ -37,7 +39,8 @@ export default async function Portfolio() {
           {response.page.fields.carousels[2].fields.images.map(
             (item, index) => (
               <ImageCard
-                // className={`height-[${item.fields.file.details.image.height}px]`}
+                height={item.fields.file.details.image.height}
+                className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
                 image={`https:${item.fields.file.url}`}
                 key={index}
                 withOverlay

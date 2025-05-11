@@ -11,11 +11,15 @@ interface ImageCardProps {
   image: string;
   className?: ComponentProps<"div">["className"];
   withOverlay?: boolean;
+  height?: number;
+  width?: number;
 }
 const ImageCard: React.FC<ImageCardProps> = ({
   image,
   className,
   withOverlay,
+  height = 0,
+  width = 0,
 }) => {
   const [showOverlay, setShowOverlay] = React.useState(false);
   const router = useRouter();
@@ -70,8 +74,8 @@ const ImageCard: React.FC<ImageCardProps> = ({
       <Image
         src={image}
         alt={image}
-        width={0}
-        height={0}
+        width={width}
+        height={height}
         sizes="100vw"
         style={{ width: "100%", height: "auto" }}
       />
