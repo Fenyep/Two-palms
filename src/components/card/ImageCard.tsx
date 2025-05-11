@@ -22,7 +22,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
   return (
     <motion.div
       className={cn(
-        "relative overflow-hidden size-full flex justify-center items-center",
+        "relative overflow-hidden w-full flex justify-center items-start break-inside-avoid",
         className
       )}
       onHoverStart={() => {

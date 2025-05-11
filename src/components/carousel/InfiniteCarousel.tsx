@@ -175,7 +175,7 @@ export default function InfiniteCarousel({
 
   return (
     <motion.div
-      className="text-black"
+      className="text-black break-inside-avoid"
       ref={ref}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}

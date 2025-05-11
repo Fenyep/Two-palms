@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "images.ctfassets.net",
+      },
+      {
+        protocol: "https",
         hostname: "cdn.builder.io",
         port: "",
         pathname: "/api/v1/image/assets/**",
