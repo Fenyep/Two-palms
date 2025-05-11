@@ -28,7 +28,9 @@ export default async function Portfolio() {
             (item, index) => (
               <ImageCard
                 height={item.fields.file.details.image.height}
-                className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
+                className={`${
+                  index !== 0 ? "mt-2 sm:mt-4" : "mt-2 sm:mt-4 md:mt-0"
+                }`}
                 image={`https:${item.fields.file.url}`}
                 key={index}
                 withOverlay
@@ -40,7 +42,9 @@ export default async function Portfolio() {
             (item, index) => (
               <ImageCard
                 height={item.fields.file.details.image.height}
-                className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
+                className={`${
+                  index !== 0 ? "mt-2 sm:mt-4" : "mt-2 sm:mt-4 md:mt-0"
+                }`}
                 image={`https:${item.fields.file.url}`}
                 key={index}
                 withOverlay
