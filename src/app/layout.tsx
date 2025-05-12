@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     title: "Two Palms Productions",
     description: "We are a BRAZILIAN Full-Service Production Company",
   },
+  icons: "/images/logo.svg",
   title: "Two Palms",
   description: "We are a BRAZILIAN Full-Service Production Company",
 };
