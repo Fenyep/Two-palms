@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "/images/landingPage/image7.png",
-        width: 1200,
-        height: 630,
+        url: "/images/logo.svg",
+        width: 38,
+        height: 41,
       },
     ],
     title: "Two Palms Productions",
