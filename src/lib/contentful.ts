@@ -97,71 +97,52 @@ export async function getPageWithCarousels(name?: string) {
   };
 }
 
-type ProjectDetailsType = {
+type ProjectType = {
   fields: {
-    title: string;
+    clientName: string;
     slug: string;
-    authorDetails: {
+    authorDetails?: {
       content: Document[];
     };
-    carousels: {
+    thumbnailImage: {
       sys: {
         id: string;
       };
       fields: {
+        title: string;
         description: string;
-        images: {
-          sys: {
-            id: string;
-          };
-          fields: {
-            description: string;
-            file: {
-              url: string;
-              fileName: string;
-              title: string;
-              contentType: string;
-              details: {
-                size: number;
-                image: {
-                  width: number;
-                  height: number;
-                };
-              };
+        file: {
+          url: string;
+          fileName: string;
+          title: string;
+          contentType: string;
+          details: {
+            size: number;
+            image: {
+              width: number;
+              height: number;
             };
           };
-        }[];
+        };
       };
-    }[];
-  };
-};
-
-type ProjectsPageType = {
-  fields: {
-    name: string;
-    projects: {
+    };
+    projectImages?: {
+      sys: {
+        id: string;
+      };
       fields: {
-        clientName: string;
-        slug: string;
-        image: {
-          sys: {
-            id: string;
-          };
-          fields: {
-            title: string;
-            description: string;
-            file: {
-              url: string;
-              fileName: string;
-              title: string;
-              contentType: string;
-              details: {
-                size: number;
-                image: {
-                  width: number;
-                  height: number;
-                };
-              };
+        title: string;
+        description: string;
+        file: {
+          url: string;
+          fileName: string;
+          title: string;
+          contentType: string;
+          details: {
+            size: number;
+            image: {
+              width: number;
+              height: number;
             };
           };
         };
@@ -170,15 +151,22 @@ type ProjectsPageType = {
   };
 };
 
+type ProjectsPageType = {
+  fields: {
+    name: string;
+    projects: ProjectType[];
+  };
+};
+
 // Fetch all page slugs for static path generation
-export async function getProjectDetailsPageFromSlug(slug: string) {
+export async function getProjectFromSlug(slug: string) {
+  const decodedSlug = decodeURIComponent(slug);
+
   const pageResults = await contentfulClient.getEntries({
-    content_type: "projectDetails",
-    "fields.slug": slug,
+    content_type: "portFolioProject",
+    "fields.slug": decodedSlug,
     include: 1,
   });
-
-  console.log("ProjectDetailsPageResult", pageResults);
 
   const page = pageResults.items[0];
 
@@ -186,45 +174,21 @@ export async function getProjectDetailsPageFromSlug(slug: string) {
     return null;
   }
 
-  return page as unknown as ProjectDetailsType;
-
-  // return pageResults.items.map((page) => ({
-  //   params: {
-  //     slug: page.fields.slug,
-  //   },
-  // }));
+  return page as unknown as ProjectType;
 }
 
-// Fetch all page slugs for static path generation
-// export async function getAllPageSlugs() {
-//   const pageResults = await contentfulClient.getEntries<IPageFields>({
-//     content_type: "page",
-//     select: "fields.slug",
-//   });
-
-//   return pageResults.items.map((page) => ({
-//     params: {
-//       slug: page.fields.slug,
-//     },
-//   }));
-// }
-
-export async function getProjectsPageFromName(name?: string) {
+export async function getProjectsPageFromName(name: string) {
   const pageResult = await contentfulClient.getEntries({
     content_type: "projectsPage",
     "fields.name": name,
     include: 1,
   });
 
-  console.log("pageResult", pageResult);
-
   const page = pageResult.items[0];
 
   if (!page) {
     return null;
   }
-
-  // console.log("page", page);
 
   return {
     page: page as unknown as ProjectsPageType,
