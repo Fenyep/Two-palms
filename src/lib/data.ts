@@ -1,3 +1,48 @@
+const landingImages1 = [
+  "/images/landingPage/image1.jpeg",
+  "/images/landingPage/image2.jpg",
+  "/images/landingPage/image3.jpg",
+  "/images/landingPage/image4.jpeg",
+  "/images/landingPage/image5.jpg",
+  "/images/landingPage/image6.jpg",
+  "/images/landingPage/image7.png",
+  "/images/landingPage/image8.jpg",
+  "/images/landingPage/image9.jpg",
+  "/images/landingPage/image10.jpg",
+  "/images/landingPage/image11.jpg",
+  "/images/landingPage/image12.jpg",
+];
+
+const landingImages2 = [
+  "/images/landingPage/image6.jpg",
+  "/images/landingPage/image11.jpg",
+  "/images/landingPage/image8.jpg",
+  "/images/landingPage/image1.jpeg",
+  "/images/landingPage/image9.jpg",
+  "/images/landingPage/image7.png",
+  "/images/landingPage/image10.jpg",
+  "/images/landingPage/image3.jpg",
+  "/images/landingPage/image2.jpg",
+  "/images/landingPage/image4.jpeg",
+  "/images/landingPage/image5.jpg",
+  "/images/landingPage/image12.jpg",
+];
+
+const landingImages3 = [
+  "/images/landingPage/image7.png",
+  "/images/landingPage/image8.jpg",
+  "/images/landingPage/image9.jpg",
+  "/images/landingPage/image10.jpg",
+  "/images/landingPage/image11.jpg",
+  "/images/landingPage/image12.jpg",
+  "/images/landingPage/image1.jpeg",
+  "/images/landingPage/image2.jpg",
+  "/images/landingPage/image3.jpg",
+  "/images/landingPage/image4.jpeg",
+  "/images/landingPage/image5.jpg",
+  "/images/landingPage/image6.jpg",
+];
+
 const images1 = [
   "/images/image_1.png",
   "/images/image_2.png",
@@ -119,6 +164,15 @@ const AboutServicesSmall: AboutServiceProps[] = [
   },
 ];
 
-export { images1, images2, images3, AboutServicesWide, AboutServicesSmall };
+export {
+  images1,
+  images2,
+  images3,
+  landingImages1,
+  landingImages2,
+  landingImages3,
+  AboutServicesWide,
+  AboutServicesSmall,
+};
 
 export type { AboutServiceProps };

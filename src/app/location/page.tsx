@@ -28,7 +28,7 @@ export default async function Location() {
             )}
           </InfiniteCarousel>
           <InfiniteCarousel
-            direction="topToBottom"
+            direction="bottomToTop"
             hoverBehavior="none"
             fastDuration={75}>
             {response.page.fields.carousels[1].fields.images.map(
@@ -59,7 +59,7 @@ export default async function Location() {
           </InfiniteCarousel>
 
           <InfiniteCarousel
-            direction="topToBottom"
+            direction="bottomToTop"
             hoverBehavior="none"
             fastDuration={75}>
             {response.page.fields.carousels[3].fields.images.map(
