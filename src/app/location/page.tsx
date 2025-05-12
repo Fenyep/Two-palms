@@ -29,7 +29,7 @@ export default async function Location() {
           </InfiniteCarousel>
           <InfiniteCarousel
             direction="topToBottom"
-            hoverBehavior="pause"
+            hoverBehavior="none"
             fastDuration={75}>
             {response.page.fields.carousels[1].fields.images.map(
               (item, index) => (
@@ -60,7 +60,7 @@ export default async function Location() {
 
           <InfiniteCarousel
             direction="topToBottom"
-            hoverBehavior="pause"
+            hoverBehavior="none"
             fastDuration={75}>
             {response.page.fields.carousels[3].fields.images.map(
               (item, index) => (
@@ -86,7 +86,7 @@ export default async function Location() {
           </InfiniteCarousel>
           <InfiniteCarousel
             direction="topToBottom"
-            // hoverBehavior="pause"
+            hoverBehavior="none"
             fastDuration={75}>
             {images2.map((item, index) => (
               <ImageCard className="" image={item} key={index} />
@@ -103,7 +103,7 @@ export default async function Location() {
 
           <InfiniteCarousel
             direction="topToBottom"
-            // hoverBehavior="pause"
+            hoverBehavior="none"
             fastDuration={75}>
             {images2.map((item, index) => (
               <ImageCard className="" image={item} key={index} />
