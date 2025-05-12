@@ -86,7 +86,7 @@ export default async function Location() {
           </InfiniteCarousel>
           <InfiniteCarousel
             direction="topToBottom"
-            hoverBehavior="pause"
+            // hoverBehavior="pause"
             fastDuration={75}>
             {images2.map((item, index) => (
               <ImageCard className="" image={item} key={index} />
@@ -103,7 +103,7 @@ export default async function Location() {
 
           <InfiniteCarousel
             direction="topToBottom"
-            hoverBehavior="pause"
+            // hoverBehavior="pause"
             fastDuration={75}>
             {images2.map((item, index) => (
               <ImageCard className="" image={item} key={index} />

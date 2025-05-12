@@ -25,7 +25,7 @@ export default async function PortfolioDetails({
           ))}
         </div>
       </section>
-      <section className="right-section w-full md:w-3/5 h-auto columns-2 px-6 md:px-0 gap-4 md:gap-x-8 gap-y-6">
+      <section className="right-section w-full md:w-3/5 h-auto columns-2 pb-8 md:pb-12 px-6 md:px-0 gap-4 md:gap-x-8 gap-y-6">
         {response?.fields.projectImages?.map((item, index) => (
           <ImageCard
             className={`max-h-[726px] ${index !== 0 ? "mt-4" : ""}`}
