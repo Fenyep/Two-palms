@@ -3,10 +3,11 @@
 import ImageCard from "@/components/card/ImageCard";
 import { getProjectsPageFromName } from "@/lib/contentful";
 // import InfiniteCarousel from "@/components/carousel/InfiniteCarousel";
-import { images1, images2, images3 } from "@/lib/data";
 
 export default async function Portfolio() {
   const response = await getProjectsPageFromName("Portfolio");
+
+  console.log(response?.page.fields.projects.length);
 
   return (
     <div className="w-screen bg-white pt-24 pb-8 sm:pb-16 columns-2 px-6 md:px-0 md:columns-3 gap-y-3.5 gap-x-4 md:gap-x-6 lg:gap-x-8 md:gap-y-8 lg:gap-[42px]">
@@ -26,21 +27,7 @@ export default async function Portfolio() {
             />
           ))}
         </>
-      ) : (
-        <>
-          {images1.map((item, index) => (
-            <ImageCard className="" image={item} key={index} withOverlay />
-          ))}
-
-          {images2.map((item, index) => (
-            <ImageCard className="" image={item} key={index} withOverlay />
-          ))}
-
-          {images3.map((item, index) => (
-            <ImageCard className="" image={item} key={index} withOverlay />
-          ))}
-        </>
-      )}
+      ) : null}
     </div>
   );
 }

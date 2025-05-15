@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex flex-col md:gap-y-0 md:flex-row">
           <div className="text-2xl md:w-[64%] lg:w-[50%] text-white uppercase tracking-[-0.8px] mt-2.5 max-md:max-w-full max-md:mt-10">
             <div className="font-normal md:font-bold leading-none">
-              Just drop an &quot;oiii&quot;
+              Just drop an &quot;oi&quot;
             </div>
             <a
               target="_blank"
