@@ -1,14 +1,14 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import React, { ComponentProps } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-// import { animatePageOut } from "@/lib/animations";
 import { useRouter } from "next/navigation";
+import DynamicImage from "../DynamicImage";
 
 interface ImageCardProps {
   image: string;
+  alt?: ComponentProps<"img">["alt"];
   className?: ComponentProps<"div">["className"];
   withOverlay?: boolean;
   height?: number;
@@ -18,6 +18,7 @@ interface ImageCardProps {
 }
 const ImageCard: React.FC<ImageCardProps> = ({
   image,
+  alt,
   className,
   withOverlay,
   height = 0,
@@ -77,9 +78,9 @@ const ImageCard: React.FC<ImageCardProps> = ({
           </motion.div>
         )}
       </AnimatePresence>
-      <Image
-        src={image}
-        alt={image}
+      <DynamicImage
+        image={image}
+        alt={alt}
         width={width}
         height={height}
         onClick={() => {
@@ -87,8 +88,6 @@ const ImageCard: React.FC<ImageCardProps> = ({
             router.push(`/portfolio/${clientSlug ?? "strava"}`);
           }
         }}
-        sizes="100vw"
-        style={{ width: "100%", height: "auto" }}
       />
     </motion.div>
   );

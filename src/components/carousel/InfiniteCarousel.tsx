@@ -8,6 +8,7 @@ import {
   AnimationPlaybackControlsWithThen,
 } from "framer-motion";
 import useMeasure from "react-use-measure";
+import { cn } from "@/lib/utils";
 
 export default function InfiniteCarousel({
   direction = "leftToRight",
@@ -15,12 +16,14 @@ export default function InfiniteCarousel({
   slowDuration = 75,
   hoverBehavior = "none",
   children,
+  className,
 }: {
   direction?: "topToBottom" | "bottomToTop" | "leftToRight" | "rightToLeft";
   fastDuration?: number;
   slowDuration?: number;
   hoverBehavior?: "pause" | "slow" | "none";
   children: React.ReactNode;
+  className?: React.ComponentProps<"div">["className"];
 }) {
   const [ref, { width, height }] = useMeasure();
   const xTranslation = useMotionValue(0);
@@ -175,7 +178,7 @@ export default function InfiniteCarousel({
 
   return (
     <motion.div
-      className="text-black break-inside-avoid"
+      className={cn("text-black break-inside-avoid", className)}
       ref={ref}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}

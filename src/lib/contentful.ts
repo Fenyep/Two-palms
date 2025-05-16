@@ -181,10 +181,12 @@ export async function getProjectsPageFromName(name: string) {
   const pageResult = await contentfulClient.getEntries({
     content_type: "projectsPage",
     "fields.name": name,
-    include: 1,
+    // include: 5,
   });
 
   const page = pageResult.items[0];
+
+  console.log("page", page);
 
   if (!page) {
     return null;
