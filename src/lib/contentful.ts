@@ -4,7 +4,6 @@ import { createClient } from "contentful";
 export const contentfulClient = createClient({
   space: `${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}`,
   accessToken: `${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`,
-  environment: `${process.env.NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT}`,
 });
 
 // Define TypeScript interfaces to match your Contentful content models
