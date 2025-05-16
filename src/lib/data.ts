@@ -14,33 +14,25 @@ const landingImages1 = [
 ];
 
 const landingImages2 = [
-  "/images/landingPage/image6.jpg",
-  "/images/landingPage/image11.jpg",
-  "/images/landingPage/image8.jpg",
-  "/images/landingPage/image1.jpeg",
   "/images/landingPage/image9.jpg",
-  "/images/landingPage/image7.png",
   "/images/landingPage/image10.jpg",
-  "/images/landingPage/image3.jpg",
-  "/images/landingPage/image2.jpg",
-  "/images/landingPage/image4.jpeg",
-  "/images/landingPage/image5.jpg",
+  "/images/landingPage/image11.jpg",
   "/images/landingPage/image12.jpg",
+  "/images/landingPage/image13.jpg",
+  "/images/landingPage/image14.jpg",
+  "/images/landingPage/image15.jpg",
+  "/images/landingPage/image16.png",
 ];
 
 const landingImages3 = [
-  "/images/landingPage/image7.png",
-  "/images/landingPage/image8.jpg",
-  "/images/landingPage/image9.jpg",
-  "/images/landingPage/image10.jpg",
-  "/images/landingPage/image11.jpg",
-  "/images/landingPage/image12.jpg",
-  "/images/landingPage/image1.jpeg",
-  "/images/landingPage/image2.jpg",
-  "/images/landingPage/image3.jpg",
-  "/images/landingPage/image4.jpeg",
-  "/images/landingPage/image5.jpg",
-  "/images/landingPage/image6.jpg",
+  "/images/landingPage/image17.jpg",
+  "/images/landingPage/image18.jpg",
+  "/images/landingPage/image19.jpg",
+  "/images/landingPage/image20.jpeg",
+  "/images/landingPage/image21.jpg",
+  "/images/landingPage/image22.tif",
+  "/images/landingPage/image23.png",
+  "/images/landingPage/image24.jpg",
 ];
 
 const images1 = [
