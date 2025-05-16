@@ -7,10 +7,6 @@ const landingImages1 = [
   "/images/landingPage/image6.jpg",
   "/images/landingPage/image7.png",
   "/images/landingPage/image8.jpg",
-  "/images/landingPage/image9.jpg",
-  "/images/landingPage/image10.jpg",
-  "/images/landingPage/image11.jpg",
-  "/images/landingPage/image12.jpg",
 ];
 
 const landingImages2 = [
