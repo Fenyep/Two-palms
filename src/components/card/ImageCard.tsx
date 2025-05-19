@@ -4,7 +4,8 @@ import { cn } from "@/lib/utils";
 import React, { ComponentProps } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
-import DynamicImage from "../DynamicImage";
+import Image from "next/image";
+// import DynamicImage from "../DynamicImage";
 
 interface ImageCardProps {
   image: string;
@@ -78,7 +79,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
           </motion.div>
         )}
       </AnimatePresence>
-      <DynamicImage
+      {/* <DynamicImage
         image={image}
         alt={alt}
         width={width}
@@ -88,6 +89,20 @@ const ImageCard: React.FC<ImageCardProps> = ({
             router.push(`/portfolio/${clientSlug ?? "strava"}`);
           }
         }}
+      /> */}
+
+      <Image
+        src={image}
+        alt={alt ?? image}
+        width={width}
+        height={height}
+        onClick={() => {
+          if (withOverlay && window.screen.width < 640) {
+            router.push(`/portfolio/${clientSlug ?? "strava"}`);
+          }
+        }}
+        sizes="100vw"
+        style={{ width: "100%", height: "auto" }}
       />
     </motion.div>
   );

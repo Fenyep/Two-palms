@@ -201,8 +201,8 @@ export default function About() {
               <LogoSvg fillColor="white" />
             </div>
             <div className="text-white text-[18px] leading-[22px] tracking-[-0.225px] md:text-[16px] md:leading-[19px] md:tracking-[-0.191px]">
-              <p className="font-bold">Elaine Payne</p>
-              <p>Strava</p>
+              <p className="font-bold">Brad Garrett</p>
+              <p>Arktik</p>
             </div>
           </div>
         </div>
