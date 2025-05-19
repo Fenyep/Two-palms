@@ -34,17 +34,19 @@ export default function VerticalCarousel({
     <div className={cn("group overflow-hidden relative w-full", className)}>
       <div
         ref={containerRef}
-        className={clsx(
-          "flex flex-col will-change-transform",
-          pauseOnHover ? "group-hover:[animation-play-state:paused]" : ""
-        )}
         style={{
           animation: `${
             direction === "bottomToTop"
               ? "vertical-scroll-to-top"
               : "vertical-scroll-to-bottom"
           } ${duration}s linear infinite`,
-        }}>
+        }}
+        className={clsx(
+          "flex flex-col will-change-transform",
+          pauseOnHover
+            ? "hover:[animation-play-state:paused] animation-play-state:paused"
+            : ""
+        )}>
         {images.map((src, i) => (
           <div key={i} className="w-full mb-4">
             <div className="relative w-full">
