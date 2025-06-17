@@ -32,7 +32,7 @@ export default async function Home() {
     <div className="flex flex-col-reverse md:flex-row md:min-h-screen w-screen bg-white">
       <section className="left-section w-full md:w-1/2 max-h-screen grid grid-cols-2 px-6 sm:px-0 sm:grid-cols-3 gap-4 sm:gap-x-8 md:gap-x-2 lg:gap-x-4 xl:gap-x-8 gap-y-6 overflow-hidden">
         <InfiniteCarousel
-          className="md:min-h-screen"
+          // className="md:min-h-screen"
           fastDuration={45}
           direction="topToBottom">
           {response?.page.fields.carousels[0].fields.images.map(
@@ -62,7 +62,7 @@ export default async function Home() {
         </InfiniteCarousel>
 
         <InfiniteCarousel
-          className="md:min-h-screen"
+          // className="md:min-h-screen"
           fastDuration={45}
           direction="bottomToTop">
           {response?.page.fields.carousels[1].fields.images.map(
@@ -92,7 +92,7 @@ export default async function Home() {
           ))} */}
         </InfiniteCarousel>
         <InfiniteCarousel
-          className="md:min-h-screen"
+          // className="md:min-h-screen"
           fastDuration={45}
           direction="topToBottom">
           {response?.page.fields.carousels[2].fields.images
