@@ -20,6 +20,7 @@ const century_gothic = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.twopalmsproductions.com"),
   openGraph: {
     images: [
       {

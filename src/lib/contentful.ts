@@ -1,10 +1,27 @@
 import { Document } from "@contentful/rich-text-types";
 import { createClient } from "contentful";
+import getRemoteBase64ImagesWithBlur, {
+  ContentfulImageWithBlur,
+} from "./getLocalBase64";
 
 export const contentfulClient = createClient({
   space: `${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}`,
   accessToken: `${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`,
 });
+
+export type ContentfulImage = {
+  url: string;
+  fileName: string;
+  title: string;
+  contentType: string;
+  details: {
+    size: number;
+    image: {
+      width: number;
+      height: number;
+    };
+  };
+};
 
 // Define TypeScript interfaces to match your Contentful content models
 export interface ICarouselFields {
@@ -12,15 +29,7 @@ export interface ICarouselFields {
   slug?: string;
   images: {
     fields: {
-      file: {
-        url: string;
-        details: {
-          image: {
-            width: number;
-            height: number;
-          };
-        };
-      };
+      file: ContentfulImage;
       title: string;
       description?: string;
     };
@@ -42,19 +51,7 @@ export interface IPageFields {
         };
         fields: {
           description: string;
-          file: {
-            url: string;
-            fileName: string;
-            title: string;
-            contentType: string;
-            details: {
-              size: number;
-              image: {
-                width: number;
-                height: number;
-              };
-            };
-          };
+          file: ContentfulImage;
         };
       }[];
     };
@@ -83,17 +80,16 @@ export async function getPageWithCarousels(name?: string) {
     include: 1,
   });
 
+  console.log("Passed");
+
   const page = pageResult.items[0];
 
   if (!page) {
     return null;
   }
 
-  console.log("page", page);
-
   return {
     page: page as unknown as IPage,
-    // carousels,
   };
 }
 
@@ -111,19 +107,7 @@ type ProjectType = {
       fields: {
         title: string;
         description: string;
-        file: {
-          url: string;
-          fileName: string;
-          title: string;
-          contentType: string;
-          details: {
-            size: number;
-            image: {
-              width: number;
-              height: number;
-            };
-          };
-        };
+        file: ContentfulImage;
       };
     };
     projectImages?: {
@@ -133,19 +117,7 @@ type ProjectType = {
       fields: {
         title: string;
         description: string;
-        file: {
-          url: string;
-          fileName: string;
-          title: string;
-          contentType: string;
-          details: {
-            size: number;
-            image: {
-              width: number;
-              height: number;
-            };
-          };
-        };
+        file: ContentfulImage;
       };
     }[];
   };

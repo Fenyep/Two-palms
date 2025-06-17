@@ -60,12 +60,15 @@ export default async function Location() {
             // height={item.fields.file.details.image.height}
             // className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
             image={`https:${item.fields.file.url}`}
+            width={item.fields.file.details.image.width}
+            height={item.fields.file.details.image.height}
             key={index}
+            priority={true}
           />
         ))}
       </InfiniteCarousel>
       <InfiniteCarousel
-        direction="bottomToTop"
+        direction="topToBottom"
         hoverBehavior="none"
         fastDuration={75}>
         {response?.page.fields.carousels[1].fields.images.map((item, index) => (
@@ -73,6 +76,9 @@ export default async function Location() {
             // height={item.fields.file.details.image.height}
             // className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
             image={`https:${item.fields.file.url}`}
+            width={item.fields.file.details.image.width}
+            height={item.fields.file.details.image.height}
+            priority={true}
             key={index}
           />
         ))}
@@ -86,13 +92,16 @@ export default async function Location() {
             // height={item.fields.file.details.image.height}
             // className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
             image={`https:${item.fields.file.url}`}
+            width={item.fields.file.details.image.width}
+            height={item.fields.file.details.image.height}
             key={index}
+            priority={true}
           />
         ))}
       </InfiniteCarousel>
 
       <InfiniteCarousel
-        direction="bottomToTop"
+        direction="topToBottom"
         hoverBehavior="none"
         fastDuration={75}>
         {response?.page.fields.carousels[3].fields.images.map((item, index) => (
@@ -100,7 +109,10 @@ export default async function Location() {
             // height={item.fields.file.details.image.height}
             // className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
             image={`https:${item.fields.file.url}`}
+            width={item.fields.file.details.image.width}
+            height={item.fields.file.details.image.height}
             key={index}
+            priority={true}
           />
         ))}
       </InfiniteCarousel>

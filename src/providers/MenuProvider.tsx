@@ -1,7 +1,7 @@
 "use client";
 
 import MenuContext from "@/contexts/MenuContext";
-import React from "react";
+import React, { useState } from "react";
 
 const navlinks: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
@@ -15,7 +15,7 @@ export default function MenuProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [isOpened, setIsOpened] = React.useState(false);
+  const [isOpened, setIsOpened] = useState(false);
 
   return (
     <MenuContext.Provider value={{ isOpened, setIsOpened, navlinks }}>

@@ -1,6 +1,7 @@
 import ImageCard from "@/components/card/ImageCard";
 import RichTextRenderer from "@/components/RichTextRenderer";
 import { getProjectFromSlug } from "@/lib/contentful";
+// import getRemoteBase64ImagesWithBlur from "@/lib/getLocalBase64";
 
 export default async function PortfolioDetails({
   params,
@@ -10,6 +11,10 @@ export default async function PortfolioDetails({
   const slug = (await params).id;
 
   const response = await getProjectFromSlug(slug);
+
+  // const firstCarouselImages = await getRemoteBase64ImagesWithBlur(
+  //   response!.fields.projectImages!.map((item) => item.fields.file)
+  // );
 
   return (
     <div className="flex bg-white pt-4 md:pt-24 flex-col md:flex-row min-h-screen w-screen">
@@ -31,8 +36,25 @@ export default async function PortfolioDetails({
             className={`max-h-[726px] ${index !== 0 ? "mt-4" : ""}`}
             image={`https:${item.fields.file.url}`}
             key={`image-${index}`}
+            width={item.fields.file.details.image.width}
+            height={item.fields.file.details.image.height}
+            priority={true}
           />
         ))}
+
+        {/* {firstCarouselImages.map((item, index) => (
+          <ImageCard
+            className={`max-h-[726px] ${index !== 0 ? "mt-4" : ""}`}
+            alt={item.title}
+            image={`https:${item.url}`}
+            blurDataUrl={item.blurredDataUrl}
+            placeholder="blur"
+            width={item.plaiceholder?.metadata.width}
+            height={item.plaiceholder?.metadata.height}
+            key={index}
+            priority={true}
+          />
+        ))} */}
       </section>
     </div>
   );

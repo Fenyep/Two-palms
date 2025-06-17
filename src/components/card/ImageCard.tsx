@@ -1,10 +1,11 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { ComponentProps } from "react";
+import React, { ComponentProps, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { PlaceholderValue } from "next/dist/shared/lib/get-img-props";
 // import DynamicImage from "../DynamicImage";
 
 interface ImageCardProps {
@@ -16,6 +17,10 @@ interface ImageCardProps {
   width?: number;
   clientName?: string;
   clientSlug?: string;
+  priority?: boolean;
+  blurDataUrl?: string;
+  placeholder?: PlaceholderValue;
+  fill?: boolean;
 }
 const ImageCard: React.FC<ImageCardProps> = ({
   image,
@@ -26,15 +31,24 @@ const ImageCard: React.FC<ImageCardProps> = ({
   width = 0,
   clientName,
   clientSlug,
+  priority,
+  blurDataUrl,
+  placeholder,
+  fill,
 }) => {
-  const [showOverlay, setShowOverlay] = React.useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
   const router = useRouter();
+
+  // Calculate aspect ratio from original dimensions
+  const aspectRatio = width && height ? width / height : 16 / 9;
+
   return (
     <motion.div
       className={cn(
         "relative overflow-hidden w-full flex justify-center items-start break-inside-avoid",
         className
       )}
+      style={{ aspectRatio: aspectRatio }}
       onHoverStart={() => {
         if (withOverlay) {
           setShowOverlay(true);
@@ -98,11 +112,15 @@ const ImageCard: React.FC<ImageCardProps> = ({
         height={height}
         onClick={() => {
           if (withOverlay && window.screen.width < 640) {
-            router.push(`/portfolio/${clientSlug ?? "strava"}`);
+            router.push(`/portfolio/${clientSlug}`);
           }
         }}
         sizes="100vw"
-        style={{ width: "100%", height: "auto" }}
+        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        priority={!!priority}
+        blurDataURL={blurDataUrl}
+        placeholder={placeholder}
+        fill={fill}
       />
     </motion.div>
   );

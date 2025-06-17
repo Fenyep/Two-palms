@@ -88,6 +88,7 @@ export default function About() {
               className="h-[250px] min-w-[250px] sm:h-[400px] sm:min-w-[300px]"
               image={item}
               key={index}
+              priority={true}
             />
           ))}
         </InfiniteCarousel>

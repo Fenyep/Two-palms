@@ -1,14 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface CardProps {
   image: string;
 }
-const Card: React.FC<CardProps> = ({ image }) => {
-  const [showOverlay, setShowOverlay] = React.useState(false);
+const Card = ({ image }: CardProps) => {
+  const [showOverlay, setShowOverlay] = useState(false);
   return (
     <motion.div
       className="relative overflow-hidden h-[426px] min-w-[300px] bg-slate-400 flex justify-center items-center"

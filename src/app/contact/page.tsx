@@ -1,8 +1,12 @@
 import ImageCard from "@/components/card/ImageCard";
 import InfiniteCarousel from "@/components/carousel/InfiniteCarousel";
-import { images1, images2 } from "@/lib/data";
+import { getLocalImagesBase64 } from "@/lib/getLocalBase64";
 
-export default function Contact() {
+export default async function Contact() {
+  const base64Images = await getLocalImagesBase64(
+    "./public/images/image_*.{jpg,png,jpeg}"
+  );
+
   return (
     <div className="flex flex-col-reverse lg:flex-row md:min-h-screen w-screen bg-white">
       <div className="left-section w-full max-h-screen overflow-y-hidden lg:w-1/2 h-auto md:h-screen grid grid-cols-2 px-6 md:px-0 gap-4 sm:gap-x-11 gap-y-8 mt-9 md:mt-0">
@@ -10,8 +14,19 @@ export default function Contact() {
           <div key={i} className="h-72 w-full md:h-full bg-blue-300"></div>
         ))} */}
         <InfiniteCarousel fastDuration={45} direction="topToBottom">
-          {images1.map((item, index) => (
-            <ImageCard className="" image={item} key={index} />
+          {base64Images.map((item, index) => (
+            <ImageCard
+              className=""
+              image={item.img.src}
+              alt={item.img.src}
+              blurDataUrl={item.base64}
+              placeholder="blur"
+              key={index}
+              width={item.metadata.width}
+              height={item.metadata.height}
+              priority={true}
+              // fill={true}
+            />
           ))}
         </InfiniteCarousel>
 
@@ -19,8 +34,18 @@ export default function Contact() {
           fastDuration={45}
           direction="bottomToTop"
           hoverBehavior="slow">
-          {images2.map((item, index) => (
-            <ImageCard className="" image={item} key={index} />
+          {base64Images.map((item, index) => (
+            <ImageCard
+              className=""
+              image={item.img.src}
+              alt={item.img.src}
+              key={index}
+              blurDataUrl={item.base64}
+              width={item.metadata.width}
+              height={item.metadata.height}
+              priority={true}
+              placeholder="blur"
+            />
           ))}
         </InfiniteCarousel>
       </div>
