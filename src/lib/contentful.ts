@@ -1,8 +1,8 @@
 import { Document } from "@contentful/rich-text-types";
 import { createClient } from "contentful";
-import getRemoteBase64ImagesWithBlur, {
-  ContentfulImageWithBlur,
-} from "./getLocalBase64";
+// import getRemoteBase64ImagesWithBlur, {
+//   ContentfulImageWithBlur,
+// } from "./getLocalBase64";
 
 export const contentfulClient = createClient({
   space: `${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}`,
