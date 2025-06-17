@@ -127,13 +127,17 @@ export default function About() {
             </p>
           </div>
         </div>
-        <div className="flex gap-6 mb-[67px] md:mb-[193px] max-w-screen overflow-x-hidden">
-          <InfiniteCarousel fastDuration={35}>
+        <div className="mb-[101px] max-w-screen overflow-x-hidden">
+          <InfiniteCarousel
+            fastDuration={15}
+            slowDuration={35}
+            direction="leftToRight">
             {images2.map((item, index) => (
               <ImageCard
-                className="h-[400px] min-w-[300px]"
+                className="h-[250px] min-w-[250px] sm:h-[400px] sm:min-w-[300px]"
                 image={item}
                 key={index}
+                priority={true}
               />
             ))}
           </InfiniteCarousel>
