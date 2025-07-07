@@ -1,11 +1,14 @@
 import ImageCard from "@/components/card/ImageCard";
 import InfiniteCarousel from "@/components/carousel/InfiniteCarousel";
-import { getLocalImagesBase64 } from "@/lib/getLocalBase64";
+import { getPageWithCarousels } from "@/lib/contentful";
+// import { getLocalImagesBase64 } from "@/lib/getLocalBase64";
 
 export default async function Contact() {
-  const base64Images = await getLocalImagesBase64(
-    "./public/images/image_*.{jpg,png,jpeg}"
-  );
+  // const base64Images = await getLocalImagesBase64(
+  //   "./public/images/image_*.{jpg,png,jpeg}"
+  // );
+
+  const response = await getPageWithCarousels("Contact");
 
   return (
     <div className="flex flex-col-reverse lg:flex-row md:min-h-screen w-screen bg-white">
@@ -13,7 +16,7 @@ export default async function Contact() {
         {/* {Array.from({ length: 6 }).map((_, i) => (
           <div key={i} className="h-72 w-full md:h-full bg-blue-300"></div>
         ))} */}
-        <InfiniteCarousel fastDuration={45} direction="topToBottom">
+        {/* <InfiniteCarousel fastDuration={45} direction="topToBottom">
           {base64Images.map((item, index) => (
             <ImageCard
               className=""
@@ -28,9 +31,27 @@ export default async function Contact() {
               // fill={true}
             />
           ))}
-        </InfiniteCarousel>
+        </InfiniteCarousel> */}
 
         <InfiniteCarousel
+          // className="md:min-h-screen"
+          fastDuration={45}
+          direction="topToBottom">
+          {response?.page.fields.carousels[0].fields.images
+            .reverse()
+            .map((item, index) => (
+              <ImageCard
+                alt={item.fields.file.title}
+                image={`https:${item.fields.file.url}`}
+                width={item.fields.file.details.image.width}
+                height={item.fields.file.details.image.height}
+                key={index}
+                priority={true}
+              />
+            ))}
+        </InfiniteCarousel>
+
+        {/* <InfiniteCarousel
           fastDuration={45}
           direction="bottomToTop"
           hoverBehavior="slow">
@@ -47,6 +68,24 @@ export default async function Contact() {
               placeholder="blur"
             />
           ))}
+        </InfiniteCarousel> */}
+
+        <InfiniteCarousel
+          // className="md:min-h-screen"
+          fastDuration={45}
+          direction="bottomToTop">
+          {response?.page.fields.carousels[1].fields.images
+            .reverse()
+            .map((item, index) => (
+              <ImageCard
+                alt={item.fields.file.title}
+                image={`https:${item.fields.file.url}`}
+                width={item.fields.file.details.image.width}
+                height={item.fields.file.details.image.height}
+                key={index}
+                priority={true}
+              />
+            ))}
         </InfiniteCarousel>
       </div>
       <div className="right-section lg:w-1/2 mt-32 md:mt-0 md:h-screen flex md:items-center md:justify-center px-6">

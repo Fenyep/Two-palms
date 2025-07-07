@@ -55,66 +55,74 @@ export default async function Location() {
         direction="bottomToTop"
         hoverBehavior="pause"
         fastDuration={75}>
-        {response?.page.fields.carousels[0].fields.images.map((item, index) => (
-          <ImageCard
-            // height={item.fields.file.details.image.height}
-            // className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
-            image={`https:${item.fields.file.url}`}
-            width={item.fields.file.details.image.width}
-            height={item.fields.file.details.image.height}
-            key={index}
-            priority={true}
-          />
-        ))}
+        {response?.page.fields.carousels[0]?.fields.images.map(
+          (item, index) => (
+            <ImageCard
+              // height={item.fields.file.details.image.height}
+              // className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
+              image={`https:${item.fields.file.url}`}
+              width={item.fields.file.details.image.width}
+              height={item.fields.file.details.image.height}
+              key={index}
+              priority={true}
+            />
+          )
+        )}
       </InfiniteCarousel>
       <InfiniteCarousel
         direction="topToBottom"
-        hoverBehavior="none"
+        hoverBehavior="pause"
         fastDuration={75}>
-        {response?.page.fields.carousels[1].fields.images.map((item, index) => (
-          <ImageCard
-            // height={item.fields.file.details.image.height}
-            // className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
-            image={`https:${item.fields.file.url}`}
-            width={item.fields.file.details.image.width}
-            height={item.fields.file.details.image.height}
-            priority={true}
-            key={index}
-          />
-        ))}
+        {response?.page.fields.carousels[1]?.fields.images.map(
+          (item, index) => (
+            <ImageCard
+              // height={item.fields.file.details.image.height}
+              // className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
+              image={`https:${item.fields.file.url}`}
+              width={item.fields.file.details.image.width}
+              height={item.fields.file.details.image.height}
+              priority={true}
+              key={index}
+            />
+          )
+        )}
       </InfiniteCarousel>
       <InfiniteCarousel
         direction="bottomToTop"
         hoverBehavior="pause"
         fastDuration={75}>
-        {response?.page.fields.carousels[2].fields.images.map((item, index) => (
-          <ImageCard
-            // height={item.fields.file.details.image.height}
-            // className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
-            image={`https:${item.fields.file.url}`}
-            width={item.fields.file.details.image.width}
-            height={item.fields.file.details.image.height}
-            key={index}
-            priority={true}
-          />
-        ))}
+        {response?.page.fields.carousels[2]?.fields.images.map(
+          (item, index) => (
+            <ImageCard
+              // height={item.fields.file.details.image.height}
+              // className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
+              image={`https:${item.fields.file.url}`}
+              width={item.fields.file.details.image.width}
+              height={item.fields.file.details.image.height}
+              key={index}
+              priority={true}
+            />
+          )
+        )}
       </InfiniteCarousel>
 
       <InfiniteCarousel
         direction="topToBottom"
-        hoverBehavior="none"
+        hoverBehavior="pause"
         fastDuration={75}>
-        {response?.page.fields.carousels[3].fields.images.map((item, index) => (
-          <ImageCard
-            // height={item.fields.file.details.image.height}
-            // className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
-            image={`https:${item.fields.file.url}`}
-            width={item.fields.file.details.image.width}
-            height={item.fields.file.details.image.height}
-            key={index}
-            priority={true}
-          />
-        ))}
+        {response?.page.fields.carousels[3]?.fields.images.map(
+          (item, index) => (
+            <ImageCard
+              // height={item.fields.file.details.image.height}
+              // className={`${index !== 0 ? "mt-2 sm:mt-4" : ""}`}
+              image={`https:${item.fields.file.url}`}
+              width={item.fields.file.details.image.width}
+              height={item.fields.file.details.image.height}
+              key={index}
+              priority={true}
+            />
+          )
+        )}
       </InfiniteCarousel>
     </div>
   );

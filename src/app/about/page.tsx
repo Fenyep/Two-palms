@@ -1,85 +1,25 @@
-"use client";
-
-import MotionIconButton from "@/components/buttons/animated/MotionIconButton";
+import AboutHero from "@/components/about/AboutHero";
 import ImageCard from "@/components/card/ImageCard";
 import InfiniteCarousel from "@/components/carousel/InfiniteCarousel";
 import LogoSvg from "@/components/LogoSvg";
+import { getPageWithCarousels } from "@/lib/contentful";
 // import { animatePageOut } from "@/lib/animations";
 import {
   AboutServiceProps,
   AboutServicesSmall,
   AboutServicesWide,
-  images1,
-  images2,
+  // images1,
+  // images2,
 } from "@/lib/data";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
-export default function About() {
-  const router = useRouter();
+export default async function About() {
+  const response = await getPageWithCarousels("About");
   return (
     <div className="space-y-6 bg-white pt-36 text-black">
-      <section className="pl-[25px] max-w-[308px] md:pr-[25px] sm:max-w-[560px] lg:max-w-max md:ml-[59px] space-y-[42px] md:space-y-8 mb-[90px] md:mb-[116px]">
-        <div className="md:max-w-[734px] self-stretch sm:pr-20 md:pr-24 lg:pr-0">
-          <h1 className="font-bold text-[50px] md:text-[68px] leading-[52px] md:leading-[77px] tracking-[-0.7px] text-[#0F0E0E]">
-            We are a BRAZILIAN Full-Service Production Company
-          </h1>
-        </div>
-        <div className="w-fit">
-          <button
-            onClick={() => router.push("/contact")}
-            className="flex sm:hidden justify-center cursor-pointer items-center gap-3.5 text-white py-[12.367px] px-[18.55px] bg-black"
-            type="button">
-            <span className="text-[18px] font-normal tracking-[-0.346px] uppercase">
-              Begin project
-            </span>
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M7.88382 0.494987L6.69074 1.68806L12.319 7.31627H0.0942383V8.97621H12.319L6.69074 14.6044L7.88382 15.7975L14.9385 8.74278L15.5091 8.14624L14.9385 7.5497L7.88382 0.494987Z"
-                fill="white"
-              />
-            </svg>
-          </button>
-
-          <MotionIconButton
-            icon={
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M7.88382 0.494987L6.69074 1.68806L12.319 7.31627H0.0942383V8.97621H12.319L6.69074 14.6044L7.88382 15.7975L14.9385 8.74278L15.5091 8.14624L14.9385 7.5497L7.88382 0.494987Z"
-                  fill="white"
-                />
-              </svg>
-            }
-            onClick={() => router.push("/contact")}
-            className="hidden sm:flex justify-center cursor-pointer items-center gap-3.5 text-white py-[12.367px] w-52 bg-black relative overflow-hidden"
-            type="button">
-            <span className="text-[18px] font-normal tracking-[-0.346px] uppercase w-full">
-              Begin project
-            </span>
-          </MotionIconButton>
-
-          {/* <button
-        onClick
-          className="flex justify-center cursor-pointer items-center gap-3.5 text-white py-[12.367px] px-[18.55px] bg-black"
-          type="button">
-          <span className="text-[18px] font-normal tracking-[-0.346px] uppercase">
-            Begin project
-          </span>
-        </button> */}
-        </div>
-      </section>
+      <AboutHero />
       <section className="mb-[101px] max-w-screen overflow-x-hidden">
-        <InfiniteCarousel
+        {/* <InfiniteCarousel
           fastDuration={15}
           slowDuration={35}
           direction="rightToLeft">
@@ -91,6 +31,25 @@ export default function About() {
               priority={true}
             />
           ))}
+        </InfiniteCarousel> */}
+
+        <InfiniteCarousel
+          fastDuration={15}
+          slowDuration={35}
+          direction="rightToLeft">
+          {response?.page.fields.carousels[0]?.fields.images
+            .reverse()
+            .map((item, index) => (
+              <ImageCard
+                className="h-[250px] min-w-[250px] sm:h-[400px] sm:min-w-[300px]"
+                alt={item.fields.file.title}
+                image={`https:${item.fields.file.url}`}
+                // width={item.fields.file.details.image.width}
+                // height={item.fields.file.details.image.height}
+                key={index}
+                priority={true}
+              />
+            ))}
         </InfiniteCarousel>
       </section>
       <section className="flex flex-col">
@@ -128,7 +87,7 @@ export default function About() {
           </div>
         </div>
         <div className="mb-[101px] max-w-screen overflow-x-hidden">
-          <InfiniteCarousel
+          {/* <InfiniteCarousel
             fastDuration={15}
             slowDuration={35}
             direction="leftToRight">
@@ -140,6 +99,25 @@ export default function About() {
                 priority={true}
               />
             ))}
+          </InfiniteCarousel> */}
+
+          <InfiniteCarousel
+            fastDuration={15}
+            slowDuration={35}
+            direction="leftToRight">
+            {response?.page.fields.carousels[1]?.fields.images
+              .reverse()
+              .map((item, index) => (
+                <ImageCard
+                  className="h-[250px] min-w-[250px] sm:h-[400px] sm:min-w-[300px]"
+                  alt={item.fields.file.title}
+                  image={`https:${item.fields.file.url}`}
+                  // width={item.fields.file.details.image.width}
+                  // height={item.fields.file.details.image.height}
+                  key={index}
+                  priority={true}
+                />
+              ))}
           </InfiniteCarousel>
         </div>
 
